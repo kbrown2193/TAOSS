@@ -24,11 +24,6 @@ public class NewGameMenu : MonoBehaviour
 
         GameFileHandler gameFileHandler = GameFileHandler.Instance;
 
-        if(gameFileHandler.CheckIfValidGameName(saveName))
-        {
-
-        }
-
         if (!gameFileHandler.CheckIfValidGameName(saveName))
         {
             // If the save already exists, call GameSaveAlreadyExists function
@@ -46,11 +41,20 @@ public class NewGameMenu : MonoBehaviour
         {
             // Is valid game name, so...
             // Create a new game save with the provided name
-            GameData newGameData = new GameData(saveName); // Initialize your game data here
+            GameData newGameData = new GameData(saveName); // Initialize game data
             gameFileHandler.CreateSave(saveName, newGameData);
 
+
+
+
+            // Open the Character Creator
+            Debug.LogWarning("TODO: open Character Creator");
+            // OR Move character Creator up before? nah
+
+
+
             // Load the  Level for a new game
-            mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut);
+            // mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut);
 
 
             // 

@@ -177,4 +177,13 @@ public class GameFileHandler : MonoBehaviour
         return isValidGameName && !string.IsNullOrEmpty(saveFileName); // ensure is not null or empty?
     }
 
+    public string GetGameSaveFilePath(string saveFileName)
+    {
+        string fullSaveFileName = saveFileName + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
+        return saveFilePath;
+        // or
+        //return Path.Combine(saveFolderPath, saveFileName + fileExtension);
+    }
+
 }
