@@ -24,13 +24,27 @@ public class NewGameMenu : MonoBehaviour
 
         GameFileHandler gameFileHandler = GameFileHandler.Instance;
 
-        if (gameFileHandler.SaveExists(saveName))
+        if(gameFileHandler.CheckIfValidGameName(saveName))
+        {
+
+        }
+
+        if (!gameFileHandler.CheckIfValidGameName(saveName))
         {
             // If the save already exists, call GameSaveAlreadyExists function
-            GameSaveAlreadyExists();
+            if (gameFileHandler.SaveExists(saveName))
+            {
+                GameSaveAlreadyExists();
+            }
+            else
+            {
+                // Must be a reserved or invalid name...
+                Debug.LogWarning("Reserved or Invalid name attempted");
+            }
         }
         else
         {
+            // Is valid game name, so...
             // Create a new game save with the provided name
             GameData newGameData = new GameData(saveName); // Initialize your game data here
             gameFileHandler.CreateSave(saveName, newGameData);

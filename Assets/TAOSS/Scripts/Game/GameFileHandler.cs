@@ -8,8 +8,16 @@ public class GameFileHandler : MonoBehaviour
     private string saveFolderName = "GameSaves";
     private string saveFolderPath;
 
+    //private string lastPlayedGame = ""; should be in application settings....
+
     // Constant value for the file extension
     private const string fileExtension = ".json";
+
+
+    // Constant value for reserved filednames
+    private const string RESERVED_GAMENAME_00 = "VERY_FIRST_GAME_01_23_45_67_89";
+
+
 
     #region Singleton
     private static GameFileHandler instance;
@@ -145,6 +153,28 @@ public class GameFileHandler : MonoBehaviour
         {
             Debug.LogError("Cannot delete save file as it does not exist: " + fullSaveFileName);
         }
+    }
+
+    // Checks if is a valid gamename, with some reservations
+    public bool CheckIfValidGameName(string saveFileName)
+    {
+
+        bool isValidGameName = false;
+
+        // Reserverd name checks
+        if(saveFileName == RESERVED_GAMENAME_00)
+        {
+            Debug.Log("Invalid gamename {RESERVED GAMENAME 00}");
+            return false;
+        }
+        else
+        {
+            string saveFilePath = Path.Combine(saveFolderPath, saveFileName + fileExtension);
+            isValidGameName = !File.Exists(saveFilePath); // is valid if file does not already exist
+        }
+
+
+        return isValidGameName && !string.IsNullOrEmpty(saveFileName); // ensure is not null or empty?
     }
 
 }

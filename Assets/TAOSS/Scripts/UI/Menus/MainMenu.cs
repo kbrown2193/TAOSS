@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private Image backgroundImage;
+
+    // FOR NOW LATER CAN BE MORE EFFICIENT?
+    [SerializeField] private Sprite[] backgroundSprites;
 
     public enum MainMenuPage
     {
@@ -68,5 +73,47 @@ public class MainMenu : MonoBehaviour
     public bool IsVisible()
     {
         return gameObject.activeSelf;
+    }
+
+    public void TitleMenuInitialization(string gameName)
+    {
+        Debug.Log("Initialize title screen based off of the game save");
+        if (gameName == "VERY_FIRST_GAME_01_23_45_67_89")
+        {
+            // first startup....
+            SetTitleMenuBackground(0);
+        }
+        else
+        {
+            // loead checkpoint
+            int lastCheckpoint = 0;
+            Debug.Log("TODO: load checkopoint and get return a index for background image");
+
+            if (lastCheckpoint <= 7)
+            {
+                // until some checkpoint set to the default non first startup background...
+                SetTitleMenuBackground(1);
+            }
+            else if (lastCheckpoint <= 14)
+            {
+                // until some checkpoint set to another background... and so forth
+                SetTitleMenuBackground(2);
+            }
+        }
+
+        SetMainMenuPage(0);
+    }
+
+    public void SetTitleMenuBackground(int titleMenuBackgroundNumber)
+    {
+        if(titleMenuBackgroundNumber >= 0 && titleMenuBackgroundNumber < backgroundSprites.Length)
+        {
+            Debug.Log("Valid background index");
+            backgroundImage.sprite = backgroundSprites[titleMenuBackgroundNumber];
+        }
+        else
+        {
+            Debug.LogError("Invalid background index");
+        }
     }
 }
