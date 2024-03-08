@@ -5,11 +5,9 @@ using TMPro;
 
 public class NewGameMenu : MonoBehaviour
 {
-    //[SerializeField] private Animator animator;
     [SerializeField] private TMP_InputField newGameSaveInputText;
     [SerializeField] private MainMenu mainMenu;
-
-    //private string newGameLevelName = "USKB_01_Demo";
+    [SerializeField] private PlayerCharacterCreator playerCharacterCreator;
 
     // Call this function when the "New Game" button is pressed
     public void NewGameSaveButtonPress()
@@ -42,24 +40,17 @@ public class NewGameMenu : MonoBehaviour
             // Is valid game name, so...
             // Create a new game save with the provided name
             GameData newGameData = new GameData(saveName); // Initialize game data
+            GameManager.Instance.SetReferenceGameData(newGameData);
             gameFileHandler.CreateSave(saveName, newGameData);
 
-
-
-
             // Open the Character Creator
-            Debug.LogWarning("TODO: open Character Creator");
-            // OR Move character Creator up before? nah
+            Debug.Log("Opening Character Creator");
+            playerCharacterCreator.Show();
 
-
-
-            // Load the  Level for a new game
-            // mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut);
-
-
-            // 
-            Debug.LogWarning("TODO: LOAD LEVEL???");
+            Debug.Log("TODO: LOAD LEVEL??? at least in background while player is creating?");
+            Debug.Log("TODO: Will start playing cinematic once player create is pressed...");
             //LevelLoader.Instance.BeginLoadingLevel(newGameLevelName);
+            // mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut);
         }
     }
 

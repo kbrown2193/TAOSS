@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameData gameData; // this is the currently loaded game data
+    [SerializeField] public GameData gameData; // this is the currently loaded game data
 
     #region Singleton
     private static GameManager instance;
@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Game Data Management
+    public void SetReferenceGameData(GameData value)
+    {
+        this.gameData = value;
+    }
     public void SaveGameData()
     {
         GameFileHandler.Instance.Save(gameData.gameName, gameData);
@@ -72,6 +76,5 @@ public class GameManager : MonoBehaviour
     {
         return gameData.lastCheckpoint;
     }
-
     #endregion
 }

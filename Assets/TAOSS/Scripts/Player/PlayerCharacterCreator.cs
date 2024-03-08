@@ -377,6 +377,8 @@ public class PlayerCharacterCreator : MonoBehaviour
     public void CreateCharacter()
     {
         // Ensure values REFRESH Values
+        SetCharacterNameViaInputField(); // ensure character name is from input field
+
         if (ValidateCharacterName())
         {
             characaterName = nameInputField.text; // IF VALID... todo...
@@ -430,7 +432,6 @@ public class PlayerCharacterCreator : MonoBehaviour
 
     #endregion
 
-
     public bool ValidateCharacterName()
     {
         if (characaterName== null || characaterName == "")
@@ -444,7 +445,16 @@ public class PlayerCharacterCreator : MonoBehaviour
         }
     }
 
-    
+    #region Visibility Control
+    public void Show()
+    {
+        this.gameObject.SetActive(true);
+    }
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+    #endregion
 }
 
 [System.Serializable]
