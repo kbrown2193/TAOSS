@@ -6,7 +6,12 @@ public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    [System.Serializable] // This attribute is used to make the enum serializable
+    [SerializeField] private VideoSettings videoSettings;
+    [SerializeField] private AudioSettings audioSettings;
+    [SerializeField] private ControlSettings controlSettings;
+    [SerializeField] private GameSettings gameSettings;
+
+    [System.Serializable]
     public enum SettingsMenuPage
     {
         Video,
@@ -43,4 +48,68 @@ public class SettingsMenu : MonoBehaviour
             Debug.LogError("Invalid SettingsMenuPage index: " + pageIndex);
         }
     }
+
+    public void LoadSettingsFromProfile()
+    {
+        ApplicationData applicationData = ApplicationDataManager.Instance.LoadApplicationData(ApplicationDataManager.Instance.GetUserProfile());
+        if (applicationData != null)
+        {
+            videoSettings = applicationData.videoSettings;
+            audioSettings = applicationData.audioSettings;
+            controlSettings = applicationData.controlSettings;
+            gameSettings = applicationData.gameSettings;
+        }
+        else
+        {
+            Debug.LogError("UserProfile null");
+        }
+        Debug.Log("Finished Loading Settings from profile");
+    }
+
+    public void SaveSettingsProfile()
+    {
+        ApplicationDataManager.Instance.SaveSettingsProfiles(videoSettings, audioSettings, controlSettings, gameSettings);
+    }
+
+    #region UI Volume Setting
+    public void SetVolumeOverall(int value)
+    {
+        audioSettings.volumeOverall = value;
+    }
+    public void SetVolumeOverall(float value)
+    {
+        audioSettings.volumeOverall = Mathf.FloorToInt(value);
+    }
+    public void SetVolumeMusic(int value)
+    {
+        audioSettings.volumeMusic = value;
+    }
+    public void SetVolumeMusic(float value)
+    {
+        audioSettings.volumeMusic = Mathf.FloorToInt(value); ;
+    }
+    public void SetVolumeSFX(int value)
+    {
+        audioSettings.volumeSFX = value;
+    }
+    public void SetVolumeSFX(float value)
+    {
+        audioSettings.volumeSFX = Mathf.FloorToInt(value); ;
+    }
+    public void SetGameSettingTestSetting(int newTestSetting)
+    {
+        gameSettings.otherSetting = newTestSetting;
+    }
+    public void SetGameSettingTestSetting(float newTestSetting)
+    {
+        gameSettings.otherSetting = Mathf.RoundToInt(newTestSetting);
+    }
+    #endregion
+
+    #region Refreshers
+    public void RefreshAudioManager()
+    {
+        AudioManager.Instance.SetAudioSettings(audioSettings);
+    }
+    #endregion
 }

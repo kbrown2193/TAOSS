@@ -5,9 +5,8 @@ using System.IO;
 
 public class ApplicationDataManager : MonoBehaviour
 {
-    private string userProfile;
-    private ApplicationData ApplicationData;
-
+    private string userProfile = "DEFAULT";
+    private ApplicationData applicationData;
 
     private string saveFolderName = "UserProfiles";
     private string saveFolderPath;
@@ -16,10 +15,6 @@ public class ApplicationDataManager : MonoBehaviour
 
     // Constant value for the file extension
     private const string fileExtension = ".json";
-
-
-
-
 
     #region Singleton
     private static ApplicationDataManager instance;
@@ -77,10 +72,18 @@ public class ApplicationDataManager : MonoBehaviour
     }
     #endregion
 
-
-    public void SaveApplicationData(string saveFileName, ApplicationData applicationData)
+    public string GetUserProfile()
     {
+        // maybe ensure it is up to date?
+
+        return userProfile;
+    }
+
+    public void SaveApplicationData(string saveFileName, ApplicationData newApplicationData)
+    {
+        userProfile = saveFileName;
         //string userProfile, string lastPlayed
+        applicationData = newApplicationData;
 
         string fullSaveFileName = saveFileName + fileExtension;
         string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
@@ -101,11 +104,13 @@ public class ApplicationDataManager : MonoBehaviour
         // Check if the save file exists before attempting to load it
         if (File.Exists(saveFilePath))
         {
+            Debug.Log("Loading application data at " + saveFilePath);
             // Read the JSON data from the file
             string json = File.ReadAllText(saveFilePath);
 
             // Deserialize the JSON data to GameData object
-            ApplicationData applicationData = JsonUtility.FromJson<ApplicationData>(json);
+            ApplicationData newApplicationData = JsonUtility.FromJson<ApplicationData>(json);
+            applicationData = newApplicationData;
             return applicationData;
         }
         else
@@ -123,8 +128,6 @@ public class ApplicationDataManager : MonoBehaviour
         ApplicationData applicationData = new ApplicationData("DEFAULT", "VERY_FIRST_GAME_01_23_45_67_89");
         SaveApplicationData(saveFileName, applicationData);
     }
-
-
     public bool CheckIfDefaultUserProfileExists()
     {
         bool thereIsDefaultUserProfile = false;
@@ -161,5 +164,34 @@ public class ApplicationDataManager : MonoBehaviour
         return File.Exists(saveFilePath);
     }
 
-
+    #region Settings Saving
+    public void SaveNewVideoSettings(VideoSettings newVideoSettings)
+    {
+        applicationData.videoSettings = newVideoSettings;
+        SaveApplicationData(applicationData.userProfile, applicationData);
+    }
+    public void SaveNewAudioSettings(AudioSettings newAudioSettings)
+    {
+        applicationData.audioSettings = newAudioSettings;
+        SaveApplicationData(applicationData.userProfile, applicationData);
+    }
+    public void SaveNewControlSettings(ControlSettings newControlSettings)
+    {
+        applicationData.controlSettings = newControlSettings;
+        SaveApplicationData(applicationData.userProfile, applicationData);
+    }
+    public void SaveNewGameSettings(GameSettings newGameSettings)
+    {
+        applicationData.gameSettings = newGameSettings;
+        SaveApplicationData(applicationData.userProfile, applicationData);
+    }
+    public void SaveSettingsProfiles(VideoSettings videoSettings, AudioSettings audioSettings, ControlSettings controlSettings, GameSettings gameSettings)
+    {
+        applicationData.videoSettings = videoSettings;
+        applicationData.audioSettings = audioSettings;
+        applicationData.controlSettings = controlSettings;
+        applicationData.gameSettings = gameSettings;
+        SaveApplicationData(applicationData.userProfile, applicationData);
+    }
+    #endregion
 }
