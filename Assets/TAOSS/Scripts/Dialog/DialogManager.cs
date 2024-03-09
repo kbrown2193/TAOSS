@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
     //private string lastPlayedGame = ""; should be in application settings....
 
     // Constant value for the file extension
-    private const string fileExtension = ".json";
+    //private const string fileExtension = ".json";
 
     #region Singleton
     private static DialogManager instance;
@@ -52,15 +52,17 @@ public class DialogManager : MonoBehaviour
         //}
     }
     #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public string GetDialogLine(string dialogKey)
     {
-        
+        string line = "TODO";
+        Debug.LogWarning("TODO: Fetch dialog line");
+        return line;
     }
 }

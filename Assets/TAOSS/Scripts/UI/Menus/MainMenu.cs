@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
     // Overloaded function to set the menu page using an integer
     public void SetMainMenuPage(int pageIndex)
     {
-        if (pageIndex >= 0 && pageIndex < (int)MainMenuPage.MainMenuFadeOut)
+        if (pageIndex >= 0 && pageIndex <= (int)MainMenuPage.MainMenuFadeOut)
         {
             SetMainMenuPage((MainMenuPage)pageIndex);
         }

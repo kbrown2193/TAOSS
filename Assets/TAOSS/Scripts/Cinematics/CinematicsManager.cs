@@ -8,11 +8,11 @@ public class CinematicsManager : MonoBehaviour
     private static CinematicsManager _instance;
 
     [SerializeField]
-    private PlayableDirector playableDirector;
+    private PlayableDirector playableDirector; // set in inspector for now... a
     [SerializeField]
     private CinematicsDatabase cinematicsDatabase; // Assign this asset to change cinematics
 
-    #region
+    #region Singleton
     public static CinematicsManager Instance
     {
         get
@@ -29,7 +29,6 @@ public class CinematicsManager : MonoBehaviour
             return _instance;
         }
     }
-    #endregion
 
     private void Awake()
     {
@@ -43,6 +42,8 @@ public class CinematicsManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    #endregion
+
 
     private void Start()
     {
@@ -53,19 +54,8 @@ public class CinematicsManager : MonoBehaviour
         }
     }
 
-    // Function to play a specific PlayableAsset
-    public void PlayTimeline(PlayableAsset timelineAsset)
-    {
-        if (timelineAsset != null)
-        {
-            playableDirector.playableAsset = timelineAsset;
-            playableDirector.Play();
-        }
-        else
-        {
-            Debug.LogError("Timeline Asset is null!");
-        }
-    }
+
+    #region Cinematics
 
     // Function to play a cinematic based on cinematic ID
     public void PlayCinematic(string cinematicID)
@@ -78,6 +68,23 @@ public class CinematicsManager : MonoBehaviour
         else
         {
             Debug.LogError("Cinematic with ID " + cinematicID + " not found in the database.");
+        }
+    }
+
+    #endregion
+
+    #region Timeline Controls and Info
+    // Function to play a specific PlayableAsset
+    public void PlayTimeline(PlayableAsset timelineAsset)
+    {
+        if (timelineAsset != null)
+        {
+            playableDirector.playableAsset = timelineAsset;
+            playableDirector.Play();
+        }
+        else
+        {
+            Debug.LogError("Timeline Asset is null!");
         }
     }
 
@@ -122,4 +129,17 @@ public class CinematicsManager : MonoBehaviour
     {
         return playableDirector.state == PlayState.Paused;
     }
+
+    #endregion
+
+    #region Playable Director Functions
+    /// <summary>
+    /// Sets the Playable Director that will play the cinematic timelines
+    /// </summary>
+    /// <param name="newPlayableDirector"></param>
+    public void SetPlayabaleDirector(PlayableDirector newPlayableDirector)
+    {
+        playableDirector = newPlayableDirector;
+    }
+    #endregion
 }

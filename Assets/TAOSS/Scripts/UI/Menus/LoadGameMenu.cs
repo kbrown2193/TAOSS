@@ -10,6 +10,7 @@ public class LoadGameMenu : MonoBehaviour
     [SerializeField] private GameObject gameSaveButtonPrefab;
     [SerializeField] private ScrollRect scrollView;
     [SerializeField] private TextMeshProUGUI currentSelectedGameSaveText;
+    [SerializeField] private MainMenu mainMenu;
 
     private List<GameObject> gameSaveButtons = new List<GameObject>();
     private float buttonHeight = 24f; // Adjust this value to control the spacing for the first button
@@ -93,9 +94,28 @@ public class LoadGameMenu : MonoBehaviour
         if (!string.IsNullOrEmpty(currentSelectedGameSave))
         {
             // Load the selected game save
-            GameFileHandler.Instance.LoadSave(currentSelectedGameSave); 
             Debug.Log("Loading game save: " + currentSelectedGameSave);
+            GameData gameData = GameFileHandler.Instance.LoadSave(currentSelectedGameSave); 
             Debug.Log("TODO: load to currrent checkpoint");
+            if (gameData != null)
+            {
+                // game data exists
+                if (gameData.lastCheckpoint == 0)
+                {
+                    // default initial start
+                    Debug.Log("Last Checkpoint = 0, playing intro cinematic");
+                    CinematicsManager.Instance.PlayCinematic("TAOSS_C0_L00_00_Intro");
+                    mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut); // set main menu fade out page
+                }
+                else
+                {
+                    Debug.Log("TODO Implement where to load for this checkpoint" + gameData.lastCheckpoint.ToString());
+                }
+            }
+            else
+            {
+                Debug.LogWarning("No Game Data Exists!");
+            }
         }
         else
         {

@@ -17193,6 +17193,7 @@ MonoBehaviour:
   gameSaveButtonPrefab: {fileID: 4617289001408346048, guid: 9f28af27c9e7622449279a32363afb52, type: 3}
   scrollView: {fileID: 1924661695038828278}
   currentSelectedGameSaveText: {fileID: 8695536168446951227}
+  mainMenu: {fileID: 9196221378595652401}
 --- !u!1 &8337084718656651349
 GameObject:
   m_ObjectHideFlags: 0
@@ -19002,6 +19003,62 @@ PrefabInstance:
     - target: {fileID: 112005993408314932, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 9196221378595652401}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayTimeline
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetMainMenuPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CinematicsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 19a17a85ed844d44d99e0a418689209b, type: 2}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Playables.PlayableAsset, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 852593813743581282, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_AnchorMax.y
