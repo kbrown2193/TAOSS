@@ -801,7 +801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -96}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4811986895555611988
@@ -3407,8 +3407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -704}
-  m_SizeDelta: {x: 256, y: 64}
+  m_AnchoredPosition: {x: 0, y: -452}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &958138167881274033
 CanvasRenderer:
@@ -4233,8 +4233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -48}
-  m_SizeDelta: {x: 128, y: 64}
+  m_AnchoredPosition: {x: 0, y: -80}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7178072762364653799
 CanvasRenderer:
@@ -4257,7 +4257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9056604, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4742,7 +4742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -544}
+  m_AnchoredPosition: {x: 0, y: -368}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6182250824049428846
@@ -5166,20 +5166,24 @@ MonoBehaviour:
   - {fileID: 4405928530682641343}
   - {fileID: 3495543636227048453}
   hairSelections:
-  - {fileID: 21300000, guid: acbcebaf5604df144bf3cea82b42f40c, type: 3}
-  - {fileID: 21300000, guid: e1e45b07c55ba0248bacfa816b917e63, type: 3}
+  - {fileID: 21300000, guid: c796892b9add58141b1056a5b44e6465, type: 3}
+  - {fileID: 21300000, guid: be769bff84eac1049b56ec3be311a179, type: 3}
+  - {fileID: 21300000, guid: 871f808f85da9ee4e95ee8cf38d504b2, type: 3}
+  - {fileID: 21300000, guid: 0a03c7f80b8ec3b4eb79f3cffc5bb940, type: 3}
   headSelections:
-  - {fileID: 21300000, guid: e1e45b07c55ba0248bacfa816b917e63, type: 3}
-  - {fileID: 21300000, guid: a8a562d171d94c74fab0f057384a11cd, type: 3}
+  - {fileID: 21300000, guid: d8276db08188e7a49b4d6cac1021b753, type: 3}
+  - {fileID: 21300000, guid: d8276db08188e7a49b4d6cac1021b753, type: 3}
   torsoSelections:
-  - {fileID: 21300000, guid: 9d78971a131c3cc4d85ba53d1a85966a, type: 3}
-  - {fileID: 21300000, guid: e1e45b07c55ba0248bacfa816b917e63, type: 3}
+  - {fileID: 21300000, guid: b31d91b5168b8df46a0fcf4e5bc09685, type: 3}
+  - {fileID: 21300000, guid: e55a64f602faf5f439b7cdffe7df7137, type: 3}
+  - {fileID: 21300000, guid: a76c239080002fa4f8bae243d8b67a0d, type: 3}
   legsSelections:
-  - {fileID: 21300000, guid: ee92411fed6748d4bb03dc8a8fa00b5e, type: 3}
-  - {fileID: 21300000, guid: e1e45b07c55ba0248bacfa816b917e63, type: 3}
+  - {fileID: 21300000, guid: ecf09284cdf65b642a96d89a098eeaa5, type: 3}
+  - {fileID: 21300000, guid: ac42017985adf1f47b9c846cd313d4d6, type: 3}
+  - {fileID: 21300000, guid: 932ea833bdf14bd4da1a77cde3ed8944, type: 3}
   feetSelections:
-  - {fileID: 21300000, guid: a8a562d171d94c74fab0f057384a11cd, type: 3}
-  - {fileID: 21300000, guid: e1e45b07c55ba0248bacfa816b917e63, type: 3}
+  - {fileID: 21300000, guid: 2a784a27be7429c499ee62232a801ca8, type: 3}
+  - {fileID: 21300000, guid: 2a784a27be7429c499ee62232a801ca8, type: 3}
 --- !u!1 &6650426345524293433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5832,7 +5836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -288}
+  m_AnchoredPosition: {x: 0, y: -240}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1596764048804049442
