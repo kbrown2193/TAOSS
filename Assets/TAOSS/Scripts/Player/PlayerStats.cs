@@ -24,17 +24,24 @@ public class PlayerStats
     public int creditsStackOverflow; // incase we max a stack, this is the overflow counter;
 
     // Core Stats
+    // Movement and Health
     public int movementSpeed; // a core movement speed, start at 0? is the base, any increase in number is faster movement
-    public int healthMax;
-    public int healthCurrent; // the current health.
+    public int healthMax; // the maximum health the player can currenntly reach
+    public int healthCurrent; // the current health, as in the hp amount right now
 
     // start at 0, can increase or decrease over game depending on outcomes etc.
-    public int agility; // dexterity? 
+    public int adaptability; // flexibility in able to adapt to new situations
+    public int agility; // dexterity? affects speed, or ability to change speed / accelleration? 
     public int charisma;
-    public int endurance;
+    public int creativity;
+    public int endurance; // for stamina
+    public int hearing;
     public int integrity;
     public int knowledge;
-    public int strength; // raw power?
+    public int smell;
+    public int strategy;
+    public int strength;
+    public int vision;
     public int willpower;
     public int wisdowm;
 
