@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2068e7a56e96d4495a4a07fe42218e, type: 3}
+  m_Name: MusicDatabase
+  m_EditorClassIdentifier: 
+  musicDataList:
+  - songKey: Town_Theme_Galaxy
+    audioClip: {fileID: 8300000, guid: 1931003d6a30c3b4ab231dd2608724b4, type: 3}
+    title: Town Theme - Galaxy
+    artist: Kyle Brown
+    album: Guiding Paths
+    description: A town theme with a galaxy voice
+    associatedWorldLevelKeys: []
+  - songKey: Town_Theme_Electric
+    audioClip: {fileID: 8300000, guid: d80c1b8375660cc4fb538eff8d8bd130, type: 3}
+    title: Town Theme - Electric
+    artist: Kyle Brown
+    album: Guiding Paths
+    description: A town theme with a electric piano voice
+    associatedWorldLevelKeys: []
+  - songKey: Eerie_Lofi_Harp
+    audioClip: {fileID: 8300000, guid: 378b5bbab3f566043a9a6278c0b266ec, type: 3}
+    title: Eerie Lofi Harp
+    artist: Kyle Brown
+    album: KB Unsorted 2023
+    description: A town theme with a electric piano voice
+    associatedWorldLevelKeys: []
+  - songKey: Eerie_Synth_D_Hold
+    audioClip: {fileID: 8300000, guid: d3e547b72a9b6844b9cdc62e7b98db21, type: 3}
+    title: Eerie Synth D Hold
+    artist: Kyle Brown
+    album: Titan
+    description: A low droning ambiance
+    associatedWorldLevelKeys: []
+  - songKey: Electric_Blue
+    audioClip: {fileID: 8300000, guid: f0023169c918eb142a157cd10770e1e3, type: 3}
+    title: Electric Blue
+    artist: Kyle Brown
+    album: Titan
+    description: A spacey feel ambiance.
+    associatedWorldLevelKeys: []
+  - songKey: Solemn_Strings_Main
+    audioClip: {fileID: 8300000, guid: f0023169c918eb142a157cd10770e1e3, type: 3}
+    title: Solemn Strings - Main
+    artist: Kyle Brown
+    album: 
+    description: Dramatic and a bit sad?
+    associatedWorldLevelKeys: []
+  - songKey: Suspense_A_Strings
+    audioClip: {fileID: 8300000, guid: 522a67013caf9324598ed56600e226da, type: 3}
+    title: Suspense A Strings
+    artist: Kyle Brown
+    album: KB Soundtracks 2023
+    description: A rising tension strings song
+    associatedWorldLevelKeys: []

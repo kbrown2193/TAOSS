@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a02d1902015c642bc507b696cacc14, type: 3}
+  m_Name: SFXDatabase
+  m_EditorClassIdentifier: 
+  sfxDataList:
+  - sfxKey: UI_Response_Negative
+    audioClip: {fileID: 8300000, guid: ed161135a5f1208478b76cc5694f5b31, type: 3}
+    title: UI Response Negative SFX
+    description: 
+  - sfxKey: UI_Response_Positive
+    audioClip: {fileID: 8300000, guid: 5d1a237263ac9ed428d12bfcdf862058, type: 3}
+    title: UI Response Posive SFX
+    description: 
+  - sfxKey: UI_Hover
+    audioClip: {fileID: 8300000, guid: 4de000faaa80a4e40babc4012814c76c, type: 3}
+    title: UI Hover SFX
+    description: 
+  - sfxKey: Alarm_Warning_A
+    audioClip: {fileID: 8300000, guid: 8fb23e472ab67d64aa7f2af1452bfd90, type: 3}
+    title: Alarm Warning A
+    description: 
+  - sfxKey: Beeps_Vintage
+    audioClip: {fileID: 8300000, guid: b19d45b06d744d84989aafd3a6cd6e66, type: 3}
+    title: Beeps Vintage
+    description: 
+  - sfxKey: Beeps_Vintage_ShortLoop
+    audioClip: {fileID: 8300000, guid: 92b4f61417c8101438cd39252e8cf8a8, type: 3}
+    title: Beeps Vintage Short Loop (1s)
+    description: 
+  - sfxKey: Beeps_Arp_EDCB_E
+    audioClip: {fileID: 8300000, guid: 94c938d46068bbf4ea04cbf88f9ec612, type: 3}
+    title: Beeps Arp EDCB E
+    description: 
+  - sfxKey: Beeps_Arp_EDCB_D
+    audioClip: {fileID: 8300000, guid: 0d389a46c2626714885273a03e5a4f19, type: 3}
+    title: Beeps Arp EDCB D
+    description: 
+  - sfxKey: Beeps_Arp_EDCB_C
+    audioClip: {fileID: 8300000, guid: f282ee33433bb174bba8e7e246791708, type: 3}
+    title: Beeps Arp EDCB C
+    description: 
+  - sfxKey: Beeps_Arp_EDCB_B
+    audioClip: {fileID: 8300000, guid: 9fd0f00bd4062c34a8941481097eb1f8, type: 3}
+    title: Beeps Arp EDCB B
+    description: 
+  - sfxKey: ByzB
+    audioClip: {fileID: 8300000, guid: c5390eefe386f214bb3219219f42be0d, type: 3}
+    title: Byz B
+    description: 
+  - sfxKey: Alien_Premonition
+    audioClip: {fileID: 8300000, guid: 7135651f071cb6f4282021dfe3fa2a8a, type: 3}
+    title: Alein Premonition
+    description: 
+  - sfxKey: Alien_Talking_Computeristic_Trilling_00
+    audioClip: {fileID: 8300000, guid: fb14cc644e0c8db48beb0375da3712ef, type: 3}
+    title: Alien Talking Computeristic Trilling 00
+    description: 
+  - sfxKey: Alien_Talking_Computeristic_Trilling_01
+    audioClip: {fileID: 8300000, guid: ff4ecda53aba5184c941abe19a51c5d9, type: 3}
+    title: Alien Talking Computeristic Trilling 01
+    description: 
+  - sfxKey: Fire_GentleCrackle
+    audioClip: {fileID: 8300000, guid: 9485d0d1e93ca7c46af3471b71d4f3fc, type: 3}
+    title: Fire Gentle Crackle
+    description: 
+  - sfxKey: Wind_Gust
+    audioClip: {fileID: 8300000, guid: 9485d0d1e93ca7c46af3471b71d4f3fc, type: 3}
+    title: Wind Gust
+    description: 
+  - sfxKey: Lightning_Strike_WithRain
+    audioClip: {fileID: 8300000, guid: 243d41da61b6430458709ad679c10052, type: 3}
+    title: Lightning Strike With Rain
+    description: 
+  - sfxKey: Plane_Flyover
+    audioClip: {fileID: 8300000, guid: 872a786124136db43b68edd4c10e756e, type: 3}
+    title: Plane Flyover
+    description: 
+  - sfxKey: ArcadeMachine_StartupSound
+    audioClip: {fileID: 8300000, guid: fc1a23049c68b3c47a855b16ea1ba8e0, type: 3}
+    title: Arcade Machine - Startup Sound
+    description: 
+  - sfxKey: TBD_00
+    audioClip: {fileID: 8300000, guid: 55daad888c3838d43bbfa83f5188a082, type: 3}
+    title: TBD_01
+    description: A short woosh like sound
+  - sfxKey: TBD_01
+    audioClip: {fileID: 8300000, guid: 5116b4f6d59a7d0459fe3ce1909ec520, type: 3}
+    title: TBD_02
+    description: A high frequency pulsing sound
+  - sfxKey: TBD_02
+    audioClip: {fileID: 8300000, guid: cd62311d5020c664cba324c29dcd6339, type: 3}
+    title: TBD_02
+    description: 'Note frequencies '
