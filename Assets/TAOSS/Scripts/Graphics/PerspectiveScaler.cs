@@ -6,6 +6,8 @@ public class PerspectiveScaler : MonoBehaviour
 {
     public Transform scaledTransform;
 
+    public float worldLevelSizeScaler = 1; //  default 1, set based on level, player might be LARGE *48 like silver room...
+
     // for current iteration, the focus horizon is always at y = 0 ... then
     public float farPositionValue = 2f; // MUST BE POSITIVE
     public float nearPositionValue = -10f; // MUST BE NEGATIVE
@@ -74,9 +76,15 @@ public class PerspectiveScaler : MonoBehaviour
             tmpScale =  nearScaler * Vector3.one;
         }
 
+        tmpScale = tmpScale * worldLevelSizeScaler; // 
+
         // scale the transform
         scaledTransform.localScale = tmpScale;
     }
 
+    public void SetWorldLevelSizeScaler(float value)
+    {
+        worldLevelSizeScaler = value;
+    }
 
 }

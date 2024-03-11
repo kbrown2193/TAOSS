@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] public GameData gameData; // this is the currently loaded game data
 
+    [SerializeField] public Player player; // handle the player
+
     #region Singleton
     private static GameManager instance;
 
@@ -75,6 +77,87 @@ public class GameManager : MonoBehaviour
     public int GetCurrentCheckpoint()
     {
         return gameData.lastCheckpoint;
+    }
+    #endregion
+
+    #region Player Management
+    public void EnablePlayerMovment()
+    {
+        //player.is
+        Debug.LogWarning("Enabling player movment");
+        player.SetIsMovemenEnabled(true);
+        //player.RefreshPlayerControllers(); //this handles enabling whichever mode is in?
+    }
+    public void DisablePlayerMovment()
+    {
+        //player.is
+        Debug.LogWarning("Disablng player movment");
+        player.SetIsMovemenEnabled(false);
+        //player.RefreshPlayerControllers(); //this handles enabling whichever mode is in?
+    }
+    public void SetPlayerMovment(bool value)
+    {
+        //player.is
+        Debug.LogWarning("Setting player movement to " + value );
+        player.SetIsMovemenEnabled(value);
+        //player.RefreshPlayerControllers(); //this handles enabling whichever mode is in?
+    }
+    public void SetPlayerMovementMode(PlayerMovementMode playerMovementMode)
+    {
+        player.SetPlayerMovementMode(playerMovementMode);
+    }
+    public void SetPlayerMovementMode(int playerMovementMode)
+    {
+        player.SetPlayerMovementMode((PlayerMovementMode) playerMovementMode);
+    }
+
+    public void ReparentPlayer(Transform value)
+    {
+        player.ReparentPlayer(value);
+    }
+    public void RepositionPlayer(Vector3 value)
+    {
+        player.RepositionPlayer(value);
+    }
+    public void SetPlayerWorldLevelSizeScaler(float value)
+    { 
+        player.SetWorldLevelSizeScaler(value);
+    }
+    public void SetPlayerWorldLevelSpeedMultiplier(float value)
+    {
+        player.SetPlayerWorldLevelSpeedMultiplier(value);
+    }
+
+    public void SetPlayer(Player newPlayer)
+    {
+        if (newPlayer != null)
+        {
+            if (newPlayer == player)
+            {
+                Debug.LogWarning("Warning Attempting to set same player object ");
+            }
+            else
+            {
+                Debug.Log("Setting new player from " + player.name + " to " + newPlayer.name);
+                player = newPlayer;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player = null");
+        }
+    }
+    public Player GetPlayer()
+    {
+        if (player == null)
+        {
+            Debug.LogWarning("Player is Null");
+            return null;
+        }
+        else
+        {
+            return player;
+        }
     }
     #endregion
 }

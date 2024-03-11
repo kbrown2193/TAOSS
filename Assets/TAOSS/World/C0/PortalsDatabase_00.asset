@@ -17,7 +17,7 @@ MonoBehaviour:
     isUnlocked: 1
     destinationKey: Arcade_Entrance
     portalLevel: SycamoreStreet
-    destinationLevel: ArcadeEntrace
+    destinationLevel: Arcade_Entrance
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
@@ -26,8 +26,8 @@ MonoBehaviour:
   - portalKey: Arcade_Entrance_To_Arcade_SilverRoom
     isUnlocked: 1
     destinationKey: Arcade_SilverRoom
-    portalLevel: ArcadeEntrance
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: Arcade_Entrance
+    destinationLevel: Arcade_SilverRoom
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
@@ -36,8 +36,8 @@ MonoBehaviour:
   - portalKey: Arcade_SilverRoom_To_GoldenBoxStartScreen
     isUnlocked: 1
     destinationKey: GoldenBoxStartScreen
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: Arcade_SilverRoom
+    destinationLevel: Arcade_SilverRoom_GoldenBox
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
@@ -106,8 +106,8 @@ MonoBehaviour:
   - portalKey: GoldenBox_Artifacts_To_Arcade_SilverRoom
     isUnlocked: 0
     destinationKey: GoldenBoxArtifactsReturnToSilverRoom
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeEntrance
+    portalLevel: Arcade_SilverRoom
+    destinationLevel: Arcade_SilverRoom
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}

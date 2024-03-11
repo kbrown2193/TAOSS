@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4489c40243d9304d81a34aa2f11bab5, type: 3}
+  m_Name: WorldLevelDatabase
+  m_EditorClassIdentifier: 
+  worldLevelDataList:
+  - worldLevelKey: SycamoreStreet
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/SycamoreStreet
+    worldLevlGrids:
+    - {fileID: 2812979114206325088, guid: 3a9bed10583be8f4db5a872b3473d873, type: 3}
+    - {fileID: 1971169404324893549, guid: abef17a22dc8eb64782bb577d8110f54, type: 3}
+    - {fileID: 9006103309009870616, guid: c8ca58926f863a342b9a1ee444734d86, type: 3}
+    - {fileID: 4771827962003938087, guid: 9a65f0a2b1590994298e12ce7074e82d, type: 3}
+    - {fileID: 2568789565559177933, guid: 845e62b1625795644b7ab3a02acd996f, type: 3}
+    - {fileID: 1386418484992806397, guid: 09cf034ec3be37346980a024b6e364da, type: 3}
+    - {fileID: 3158227996411027055, guid: fa79db6c1440a8c40ba2dbef58ca392e, type: 3}
+    - {fileID: 6017771652645782772, guid: 0273883384388d14687bc3f6355a827a, type: 3}
+    - {fileID: 2702733648257086755, guid: d0e54fa420137754ebab9a44193993b4, type: 3}
+    - {fileID: 2702733648257086755, guid: d0e54fa420137754ebab9a44193993b4, type: 3}
+    - {fileID: 2045736275237547890, guid: eacab45eb3e661340b7876d893327199, type: 3}
+    - {fileID: 2394467665935990669, guid: c9e364588eb648c4b916c83d9f49a59f, type: 3}
+    worldLevelTilemaps:
+    - {fileID: 1094216477230311957, guid: bcf3540727210ed42adbf07f624a6025, type: 3}
+    - {fileID: 7312273509607937052, guid: 2588762594655b349bd9fba7b0921031, type: 3}
+    - {fileID: 1966431723475129355, guid: 202a8f3c9ba666641b4bda96d7368297, type: 3}
+    - {fileID: 1299002014343355740, guid: 266862dec596f5942978c6ff8c548711, type: 3}
+    - {fileID: 4768922499755422811, guid: bf1eee64cf9505b4b9be9bd18bd6a684, type: 3}
+    - {fileID: 8670863214061582013, guid: 316b5f26763cd704e9e2e06de6e8fd99, type: 3}
+    - {fileID: 4513402626611372089, guid: d3c569b324f79134488e7ff6776b76e2, type: 3}
+    - {fileID: 7057110140657842609, guid: f8d8856b55053aa468f865d73781dfe5, type: 3}
+    - {fileID: 8103336619615372523, guid: 8a94c432c2365b94b8d9c319bda59ea6, type: 3}
+    - {fileID: 329051961266402825, guid: 69f835409a6aad2459cfb79bb2135163, type: 3}
+    - {fileID: 5685225813570505991, guid: f5ad9599d9dae5141961bb7fde06406f, type: 3}
+    - {fileID: 8517677924459621536, guid: 0436666d51c73bc4d8b0ca3f23371019, type: 3}
+    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: Arcade_Entrance
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/Entrance
+    worldLevlGrids:
+    - {fileID: 4862284993178486230, guid: eeadf6fd46b102548bff35744bb7447a, type: 3}
+    - {fileID: 4862284993178486230, guid: eeadf6fd46b102548bff35744bb7447a, type: 3}
+    - {fileID: 1167149453470211438, guid: 07b66b29131ae8a498764339d2ac2de3, type: 3}
+    worldLevelTilemaps:
+    - {fileID: 5313097416050373419, guid: f48a6396ab6f17242a8374bdbcadc7aa, type: 3}
+    - {fileID: 503245957503044036, guid: 519a83f2590936b41864c2d85c138c19, type: 3}
+    - {fileID: 417894763535126322, guid: 48693c8defbf1d149b386acce9aba795, type: 3}
+    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1.1
+    worldLevelMovementSpeedMultiplier: 1.1
+  - worldLevelKey: Arcade_SilverRoom
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: -150, y: -80, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 153, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 20
+    worldLevelMovementSpeedMultiplier: 10
+  - worldLevelKey: Arcade_SilverRoom_GoldenBox
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Center
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
