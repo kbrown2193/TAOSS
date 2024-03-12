@@ -17,7 +17,7 @@ public class MusicDatabase : ScriptableObject
 
     private void InitializeLookupTable()
     {
-        musicDataList.Clear();
+        musicDataLookupTable.Clear();
         foreach (MusicData musicData in musicDataList)
         {
             musicDataLookupTable[musicData.songKey] = musicData;

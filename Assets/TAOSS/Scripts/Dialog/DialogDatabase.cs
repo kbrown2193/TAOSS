@@ -17,7 +17,7 @@ public class DialogDatabase : ScriptableObject
 
     private void InitializeLookupTable()
     {
-        dialogDataList.Clear();
+        dialogDataLookupTable.Clear();
         foreach (DialogData dialogData in dialogDataList)
         {
             dialogDataLookupTable[dialogData.dialogKey] = dialogData;

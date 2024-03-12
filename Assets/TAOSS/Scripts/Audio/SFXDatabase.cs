@@ -17,7 +17,7 @@ public class SFXDatabase : ScriptableObject
 
     private void InitializeLookupTable()
     {
-        sfxDataList.Clear();
+        sfxDataLookupTable.Clear();
         foreach (SFXData sfxData in sfxDataList)
         {
             sfxDataLookupTable[sfxData.sfxKey] = sfxData;
