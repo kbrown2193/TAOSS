@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221a2295ae346804c9875d4d694479c9, type: 3}
+  m_Name: DialogDatabase
+  m_EditorClassIdentifier: 
+  dialogDataList:
+  - dialogKey: L00_S00_00
+    dialogType: 0
+    dialogText: This is a test.
+    dialogResponses: []
+  - dialogKey: L00_S00_01
+    dialogType: 0
+    dialogText: And a second no response auto dalog test.
+    dialogResponses: []
+  - dialogKey: L00_S00_02
+    dialogType: 1
+    dialogText: No Response Confirmation Test... Press... Anything
+    dialogResponses: []
+  - dialogKey: L00_S00_03
+    dialogType: 2
+    dialogText: 1 Response Test
+    dialogResponses:
+    - Test Response 0
+  - dialogKey: L00_S00_04
+    dialogType: 2
+    dialogText: 2 Response Test
+    dialogResponses:
+    - Test Response 0
+    - Test Response 1
+  - dialogKey: L00_S00_05
+    dialogType: 2
+    dialogText: 3 Response Test
+    dialogResponses:
+    - Test Response 0
+    - Test Response 1
+    - Test Response 2
+  - dialogKey: L00_S00_06
+    dialogType: 2
+    dialogText: Test New Line Text \nSecond Line \n Third Line
+    dialogResponses:
+    - Test Response 0
+    - Test Response 1
+    - Test Response 2
+    - Test Response 2
+  - dialogKey: L01_S00_00
+    dialogType: 0
+    dialogText: '?: There is a tale, a tale of a box. \n Made of gold and iron locks'
+    dialogResponses: []
+  - dialogKey: L01_S00_01
+    dialogType: 0
+    dialogText: '?: Whats contained, deep within?\nWhat''s to come, what has been.'
+    dialogResponses: []
+  - dialogKey: L01_S00_02
+    dialogType: 0
+    dialogText: '?: Test your will, test your might.\nCareful now, prepare to fight. '
+    dialogResponses: []
+  - dialogKey: L01_S00_03
+    dialogType: 0
+    dialogText: '?: Onward now, count to ten.\nHere we go, go again. '
+    dialogResponses: []
