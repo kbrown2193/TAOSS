@@ -82,6 +82,7 @@ public class DialogManager : MonoBehaviour
     public void BeginDialog(string dialogKey)
     {
         Debug.Log("Begining Dialog");
+        currentDialogKey = dialogKey;
         DialogData dialogData = GetDialogData(dialogKey);
 
         ShowDialogBox();
@@ -102,6 +103,8 @@ public class DialogManager : MonoBehaviour
     #region Player Interaction 
     public void PlayerDialogInteract()
     {
+        DialogData dialogData = GetDialogData(currentDialogKey); //
+
         if(dialogStatus.dialogOpenState != DialogOpenState.Closed)
         {
             switch (dialogStatus.dialogType)
@@ -109,12 +112,32 @@ public class DialogManager : MonoBehaviour
                 case DialogType.NoResponseAuto:
                     // interactionn does nothing?
                     Debug.Log("PlayerDialogInterac.NoResponseAuto... Do nothing for now...or hide");
-                    EndDialog();
+                    if (dialogData.isDialogChain)
+                    {
+                        Debug.Log("Is Dialog Chain");
+                        BeginDialog(dialogData.nextDialogKey);
+                    }
+                    else
+                    {
+                        Debug.Log("Is NOT Dialog Chain");
+                        // is not dialog chain, so end
+                        EndDialog();
+                    }
                     break;
                 case DialogType.NoResponseButConfirmation:
                     // either continue to next dialog... or hide...
                     Debug.Log("PlayerDialogInteract.NoResponseButConfirmation... Hide dialog for now...");
-                    EndDialog();
+                    if (dialogData.isDialogChain)
+                    {
+                        Debug.Log("Is Dialog Chain");
+                        BeginDialog(dialogData.nextDialogKey);
+                    }
+                    else
+                    {
+                        Debug.Log("Is NOT Dialog Chain");
+                        // is not dialog chain, so end
+                        EndDialog();
+                    }
                     break;
                 case DialogType.WithResponses:
                     Debug.Log("PlayerDialogInteract.WithResponses... Choose Response...");
@@ -247,12 +270,30 @@ public class DialogManager : MonoBehaviour
     #region Responses
     public void ChooseResponse(int responseChoice)
     {
+        DialogData dialogData = GetDialogData(currentDialogKey);
+
         Debug.Log("Response Choice " + responseChoice);
         Debug.Log("TODO: Save Choice " + responseChoice);
         dialogStatus.mostRecentResponse = responseChoice;
 
-        // either continue conversation... forn now close
-        EndDialog();
+        if (dialogData != null)
+        {
+            if (dialogData.isDialogChain)
+            {
+                Debug.Log("Is Dialog Chain");
+                BeginDialog(dialogData.nextDialogKey);
+            }
+            else
+            {
+                Debug.Log("Is NOT Dialog Chain");
+                // is not dialog chain, so end
+                EndDialog();
+            }
+        }
+        else
+        {
+            Debug.Log("Curent dialog data is null");
+        }
     }
 
     public void SetHoveredResponse(int response)

@@ -46,6 +46,8 @@ public class DialogData
     public DialogType dialogType;
     public string dialogText;
     public string[] dialogResponses;
+    public bool isDialogChain;
+    public string nextDialogKey; // if is dialog chain... then go ehere next
 }
 
 

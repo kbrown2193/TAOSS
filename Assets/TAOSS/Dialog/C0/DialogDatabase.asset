@@ -17,25 +17,35 @@ MonoBehaviour:
     dialogType: 0
     dialogText: This is a test.
     dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L00_S00_01
     dialogType: 0
-    dialogText: And a second no response auto dalog test.
+    dialogText: 'A second no response auto dalog test. And is a chain '
     dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L00_S00_02
   - dialogKey: L00_S00_02
     dialogType: 1
     dialogText: No Response Confirmation Test... Press... Anything
     dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L00_S00_03
     dialogType: 2
     dialogText: 1 Response Test
     dialogResponses:
     - Test Response 0
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L00_S00_04
     dialogType: 2
     dialogText: 2 Response Test
     dialogResponses:
     - Test Response 0
     - Test Response 1
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L00_S00_05
     dialogType: 2
     dialogText: 3 Response Test
@@ -43,6 +53,8 @@ MonoBehaviour:
     - Test Response 0
     - Test Response 1
     - Test Response 2
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L00_S00_06
     dialogType: 2
     dialogText: Test New Line Text \nSecond Line \n Third Line
@@ -51,19 +63,29 @@ MonoBehaviour:
     - Test Response 1
     - Test Response 2
     - Test Response 2
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L01_S00_00
     dialogType: 0
     dialogText: '?: There is a tale, a tale of a box.  Made of gold and iron locks.'
     dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L01_S00_01
   - dialogKey: L01_S00_01
     dialogType: 0
     dialogText: '?: Whats contained, deep within?  What''s to come, what has been.'
     dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L01_S00_02
   - dialogKey: L01_S00_02
     dialogType: 0
     dialogText: '?: Test your will, test your might.  Careful now, prepare to fight. '
     dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L01_S00_03
   - dialogKey: L01_S00_03
     dialogType: 0
     dialogText: '?: Onward now, count to ten.  Here we go, go again. '
     dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
