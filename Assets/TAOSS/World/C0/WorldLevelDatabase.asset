@@ -106,7 +106,103 @@ MonoBehaviour:
   - worldLevelKey: GoldenBox_Center
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
-    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Center
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Bird
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Bird
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Beast
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Beast
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Star
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Star
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Moon
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Moon
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Gateway
+    isUnlocked: 0
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Gateway
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+  - worldLevelKey: GoldenBox_Artifacts
+    isUnlocked: 0
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Artifacts
     worldLevlGrids:
     - {fileID: 0}
     worldLevelTilemaps:

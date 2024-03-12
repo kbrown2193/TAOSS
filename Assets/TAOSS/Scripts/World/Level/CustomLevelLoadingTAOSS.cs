@@ -36,25 +36,28 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
                 if(destinationWorldLevelData.isUnlocked)
                 {
                     Debug.Log("Unlocked");
+
                     if(startingWorldLevelData.worldLevelSceneName == destinationWorldLevelData.worldLevelSceneName)
                     {
                         Debug.Log("Same Scene");
                         // Handle activations / deactivations 
                         Debug.Log(startingWorldLevelData.worldLevelHierarchyName); // need to find this? and disable it
+                        GameObject goToDisable = GameObject.Find(startingWorldLevelData.worldLevelHierarchyName); // should always be active if it was the scene we were just in...
+
+                        if (GameObject.Find(startingWorldLevelData.worldLevelHierarchyName) != null)
+                        {
+                            Debug.Log("Starting Find Result Name = " + GameObject.Find(startingWorldLevelData.worldLevelHierarchyName).name);
+                        }
+                        else
+                        {
+                            Debug.LogWarning("Cannot find Stating level in hierarchy " + startingWorldLevelData.worldLevelHierarchyName);
+                        }
 
 
-                        GameObject goToDisable = GameObject.Find(startingWorldLevelData.worldLevelHierarchyName);
-                        Debug.Log("Starting Find Result Name = " + GameObject.Find(startingWorldLevelData.worldLevelHierarchyName).name);
+                        Debug.Log("destination worldLevelHierarchyName = " + destinationWorldLevelData.worldLevelHierarchyName); // need to find this? and enable it
 
-                        Debug.Log(destinationWorldLevelData.worldLevelHierarchyName); // need to find this? and enable it
-                        GameObject goToEnable = GameObject.Find(destinationWorldLevelData.worldLevelHierarchyName);
-                        //Debug.Log("Destination Find Result Name = " + GameObject.Find(destinationWorldLevelData.worldLevelHiearchyName).name); // is invalid cannot find
-                        // because is inactive....
+                        GameObject goToEnable = GameObject.Find(destinationWorldLevelData.worldLevelHierarchyName); // is the statement unecessary?
 
-                        //GameObject.FindAnyObjectByType<WorldLevel>();
-                        //GameObject.FindAnyObjectByType<WorldLevel>();
-                        //worldLevelsInScene = GameObject.FindObjectsOfType<WorldLevel>(FindObjectsInactive.Include);
-                        //worldLevelsInScene = GameObject.FindObjectsOfType<WorldLevel>(FindObjectsInactive.Include);
                         worldLevelsInScene = GameObject.FindObjectsOfType<WorldLevel>(true);
                         DebugPrintWorldLevelsArray(worldLevelsInScene);
 
@@ -73,55 +76,27 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
                                 string[] destinationRoots = (destinationWorldLevelData.worldLevelHierarchyName).Split('/');
                                 if (destinationRoots.Length >= 4 )
                                 {
-                                    Debug.Log("nested scene case need to handle...");
+                                    Debug.Log("nested scene case need to handle..."); // actually just enabling parents?
                                 }
-                                /*
-                                bool isAboveInTree = true;
-
-                                string[] startRoots = (destinationWorldLevelData.worldLevelHierarchyName).Split('/');
-                                string[] destinationRoots = (destinationWorldLevelData.worldLevelHierarchyName).Split('/');
-
-                                // check for first level for now
-                                if(startRoots[0] != destinationRoots[0])
-                                {
-                                    Debug.Log("Differerent Top Level Root..");
-                                    isAboveInTree = false;
-                                }
-                                else
-                                {
-                                    Debug.Log("Same Top Level Root...");
-                                }
-
-                                if (isAboveInTree)
-                                {
-                                    // do not deactivated
-                                }
-                                else
-                                {
-                                    goToDisable.SetActive(false);
-                                }
-                                */
 
                                 goToDisable.SetActive(false);
+                            }
+                            else
+                            {
+                                Debug.Log("GoToDeactivate is null");
                             }
 
                             if (goToEnable != null)
                             {
                                 goToEnable.SetActive(true);
+                                EnableParents(goToEnable); // will this fix goldenbox?
+                            }                            
+                            else
+                            {
+                                Debug.LogWarning("goToEnable is null");
+                                // one last attempt
 
                             }
-
-                            
-
-                            // parent player??
-                            //player = FindActivePlayer();
-
-                            //GameManager.Instance.SetPlayer(player);
-
-                            //player = FindActivePlayerPlatformerMovement();
-
-
-                            //ReparentPlayer(destinationWorldLevelData);
 
                             // IF NEW PLAYER IN SCENE, add flag in world level data?
                             GameManager.Instance.SetPlayer(player);
@@ -143,6 +118,7 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
                         }
                         // disable 
                     }
+                    else
                     {
                         Debug.Log("Not same scene");
                         Debug.Log("StartingKey{" + startingWorldLevelData.worldLevelKey + "}, DestinationKey{" + destinationWorldLevelData.worldLevelKey +"}");
@@ -158,17 +134,14 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
             {
                 Debug.LogError("Invalid destinationWorldLevelData");
             }
-
-
-            // handle camera
-            //destinationWorldLevelData.cameraSize = 
         }
     }
 
     public GameObject GetWorldLevelGameObject(WorldLevel[] worldLevels, string targetWorldLevelKey)
     {
         if (worldLevels == null)
-        { 
+        {
+            Debug.Log("NULL World Levels");
             return null;
         }
         else
@@ -227,6 +200,22 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
         return GameObject.FindAnyObjectByType<Player>();
     }
 
-    //public void EnableParents? // manually doing at the momenet
-    //public void HandleCamera
+    public void EnableParents(GameObject go)
+    {
+        Debug.Log("Enabling parents for " + go.name);
+
+        if(go.transform.parent != null)
+        {
+            Debug.Log("Enabling parent" + go.transform.parent.gameObject.name);
+
+            go.transform.parent.gameObject.SetActive(true);
+
+            if(go.transform.parent.transform.parent != null)
+            {
+                // recuersive call if still has parent.
+                Debug.Log("Recursive Call started at " + go.name + " for " + go.transform.parent.gameObject.name);
+                EnableParents(go.transform.parent.gameObject);
+            }
+        }
+    }
 }

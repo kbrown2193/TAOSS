@@ -35,7 +35,7 @@ MonoBehaviour:
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: Arcade_SilverRoom_To_GoldenBoxStartScreen
     isUnlocked: 1
-    destinationKey: GoldenBoxStartScreen
+    destinationKey: Arcade_SilverRoom_GoldenBox
     portalLevel: Arcade_SilverRoom
     destinationLevel: Arcade_SilverRoom_GoldenBox
     portalPosition: {x: 0, y: 0, z: 0}
@@ -45,68 +45,68 @@ MonoBehaviour:
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Center_To_GoldenBox_Bird
     isUnlocked: 1
-    destinationKey: GoldenBoxBird
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    destinationKey: GoldenBox_Bird
+    portalLevel: GoldenBox_Center
+    destinationLevel: GoldenBox_Bird
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Center_To_GoldenBox_Beast
-    isUnlocked: 0
-    destinationKey: GoldenBoxBeast
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: GoldenBox_Beast
+    portalLevel: GoldenBox_Center
+    destinationLevel: GoldenBox_Beast
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 0, y: 0}
   - portalKey: GoldenBox_Center_To_GoldenBox_Star
-    isUnlocked: 0
-    destinationKey: GoldenBoxStar
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: GoldenBox_Star
+    portalLevel: GoldenBox_Center
+    destinationLevel: GoldenBox_Star
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Center_To_GoldenBox_Moon
-    isUnlocked: 0
-    destinationKey: GoldenBoxMoon
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: GoldenBox_Moon
+    portalLevel: GoldenBox_Center
+    destinationLevel: GoldenBox_Moon
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Center_To_GoldenBox_Gateway
-    isUnlocked: 0
-    destinationKey: GoldenBoxGateway
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: GoldenBox_Gateway
+    portalLevel: GoldenBox_Center
+    destinationLevel: GoldenBox_Gateway
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Gateway_To_GoldenBox_Artifacts
-    isUnlocked: 0
-    destinationKey: GoldenBoxArtifacts
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: GoldenBox_Artifacts
+    portalLevel: GoldenBox_Gateway
+    destinationLevel: GoldenBox_Artifacts
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Artifacts_To_Arcade_SilverRoom
-    isUnlocked: 0
-    destinationKey: GoldenBoxArtifactsReturnToSilverRoom
-    portalLevel: Arcade_SilverRoom
+    isUnlocked: 1
+    destinationKey: Arcade_SilverRoom
+    portalLevel: GoldenBox_Artifacts
     destinationLevel: Arcade_SilverRoom
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
@@ -114,19 +114,19 @@ MonoBehaviour:
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: Arcade_SilverRoom_To_ArcadeEntrance
-    isUnlocked: 0
-    destinationKey: ArcadeSilverRoomReturnToArcadeEntrance
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: Arcade_Entrance
+    portalLevel: Arcade_SilverRoom
+    destinationLevel: Arcade_Entrance
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: ArcadeEntrance_To_SycamoreStreet
-    isUnlocked: 0
-    destinationKey: ArcadeEntranceReturnToSycamoreStreet
-    portalLevel: ArcadeEntrance
+    isUnlocked: 1
+    destinationKey: SycamoreStreet
+    portalLevel: Arcade_Entrance
     destinationLevel: SycamoreStreet
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
@@ -164,120 +164,120 @@ MonoBehaviour:
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Bird_Start_To_GoldenBox_Center
-    isUnlocked: 0
-    destinationKey: GoldenBoxBirdReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    isUnlocked: 1
+    destinationKey: GoldenBox_Center
+    portalLevel: GoldenBox_Bird
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Beast_Start_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxBeastReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Beast
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Star_Start_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxStarReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Star
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Moon_Start_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxMoonReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Moon
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Gateway_Start_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxGatewayReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Gateway
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Artifacts_Start_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxArtifactsReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Artifacts
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Bird_End_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxBirdReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Bird
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Beast_End_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxBeastReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Beast
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Star_End_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxStarReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Star
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Moon_End_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxMoonReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Moon
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Gateway_End_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxGatewayReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Gateway
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: GoldenBox_Artifacts_End_To_GoldenBox_Center
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: GoldenBoxArtifactsReturnToCenter
-    portalLevel: ArcadeSilverRoom
-    destinationLevel: ArcadeSilverRoom
+    portalLevel: GoldenBox_Artifacts
+    destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}

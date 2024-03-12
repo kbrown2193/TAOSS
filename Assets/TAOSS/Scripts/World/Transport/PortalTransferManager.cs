@@ -7,9 +7,6 @@ public class PortalTransferManager : MonoBehaviour
     [SerializeField]
     private PortalsDatabase portalsDatabase; // Assign this asset to change portals
 
-    // level manager
-    // needs to take portalData.portalLevel
-    // and handle loading levels
     [SerializeField]
     private CustomLevelLoadingTAOSS customLevelLoadingTAOSS;
 

@@ -22,14 +22,12 @@ public class TAOSSPreloader : MonoBehaviour
 
             Debug.Log("Loading Application  Data");
             applicationData = ApplicationDataManager.Instance.LoadApplicationData("DEFAULT"); // ONLY LOADING FROM DEFAULT PROFILE FOR NOW
-
         }
         else
         {
             Debug.Log("Application Data Does NOT Exist");
-
-
             // does not exist... create
+
             Debug.Log("Creating default application data...");
             ApplicationDataManager.Instance.CreateDefaultProfile();
 
@@ -40,18 +38,12 @@ public class TAOSSPreloader : MonoBehaviour
             //ApplicationDataManager.Instance.SaveApplicationData("DEFAULT", applicationData);
             // use default...
             // load Main Menu
-
-
         }
-
-
 
         InitializeMainMenu(applicationData.lastPlayed);
 
         //TransitionToMainMenu();
         StartCoroutine(TransitionToMainMenu());
-
-
     }
 
     public bool CheckIfApplicationDataExists()
@@ -87,11 +79,9 @@ public class TAOSSPreloader : MonoBehaviour
             // null attempt to find?
             // TODO:???
 
-            //
             // error out
             Debug.LogError("No Main Menu Exists!");
         }
-
 
         if (gameName == "VERY_FIRST_GAME_01_23_45_67_89")
         {
@@ -104,19 +94,14 @@ public class TAOSSPreloader : MonoBehaviour
         }
 
         mainMenu.TitleMenuInitialization(gameName);
-
-        //mainMenu.
     }
 
     public IEnumerator TransitionToMainMenu()
     {
-        // delete the preloader for now?
-
         yield return new WaitForSeconds(2); // initial wait for now... before destroying this
 
-        Destroy(this.gameObject);
+        Destroy(this.gameObject); // delete the preloader for now?
 
         yield return null;
-
     }
 }
