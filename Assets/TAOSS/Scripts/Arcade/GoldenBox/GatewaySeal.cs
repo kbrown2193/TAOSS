@@ -18,6 +18,7 @@ public class GatewaySeal : MonoBehaviour
     [SerializeField] private Sprite doorSpriteUnlocked; // set door to this if unlocked
 
     /*
+     * */
     private void Update()
     {
         // testing Locks
@@ -38,7 +39,8 @@ public class GatewaySeal : MonoBehaviour
             }
         }
     }
-    */
+    /*
+     */ 
 
     #region Locks
     public bool [] LocksIsLocked
