@@ -44,6 +44,7 @@ public class DialogResponseOption : MonoBehaviour
     {
         // attach to button prior... then...
         Debug.Log("Response = " + responseIndex);
+        DialogManager.Instance.ChooseResponse(responseIndex);
     }
     #endregion
 

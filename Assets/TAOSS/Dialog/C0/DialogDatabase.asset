@@ -53,17 +53,17 @@ MonoBehaviour:
     - Test Response 2
   - dialogKey: L01_S00_00
     dialogType: 0
-    dialogText: '?: There is a tale, a tale of a box. \n Made of gold and iron locks'
+    dialogText: '?: There is a tale, a tale of a box.  Made of gold and iron locks.'
     dialogResponses: []
   - dialogKey: L01_S00_01
     dialogType: 0
-    dialogText: '?: Whats contained, deep within?\nWhat''s to come, what has been.'
+    dialogText: '?: Whats contained, deep within?  What''s to come, what has been.'
     dialogResponses: []
   - dialogKey: L01_S00_02
     dialogType: 0
-    dialogText: '?: Test your will, test your might.\nCareful now, prepare to fight. '
+    dialogText: '?: Test your will, test your might.  Careful now, prepare to fight. '
     dialogResponses: []
   - dialogKey: L01_S00_03
     dialogType: 0
-    dialogText: '?: Onward now, count to ten.\nHere we go, go again. '
+    dialogText: '?: Onward now, count to ten.  Here we go, go again. '
     dialogResponses: []

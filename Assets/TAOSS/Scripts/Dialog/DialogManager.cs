@@ -8,7 +8,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private DialogBox dialogBox;
     [SerializeField] private DialogResponseOption[] dialogResponseOptions;
 
-    private DialogStatus currentDialogStatus; // the currentDialog Stats
+    private DialogStatus dialogStatus; // the currentDialog Stats
 
     private string currentDialogKey; // hold a key to which dialog we are at... // see currentDialogStatus.dialogKey
 
@@ -43,11 +43,13 @@ public class DialogManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // Initialize Dialog Status
+        dialogStatus = new DialogStatus();
         //saveFolderPath = Path.Combine(Application.persistentDataPath, saveFolderName);
 
         // Create the save folder if it doesn't exist
         //if (!Directory.Exists(saveFolderPath))
-       // {
+        // {
         //    Directory.CreateDirectory(saveFolderPath);
         //}
     }
@@ -70,24 +72,58 @@ public class DialogManager : MonoBehaviour
     {
         return GetDialogData(dialogKey).dialogResponses;
     }
+    public int GetDialogResponseCount(string dialogKey)
+    {
+        return GetDialogData(dialogKey).dialogResponses.Length;
+    }
     #endregion
 
     #region Dialog Begin and End
     public void BeginDialog(string dialogKey)
     {
         Debug.Log("Begining Dialog");
+        DialogData dialogData = GetDialogData(dialogKey);
+
         ShowDialogBox();
         TypeDialogTextByDialogKey(dialogKey);
         ShowDialogResponseOptions(dialogKey);
         TypeDialogResponses(dialogKey);
+        SetDialogStatus(dialogKey);
     }
     public void EndDialog()
     {
         Debug.Log("Ending Dialog");
         HideDialogBox();
         HideDialogResponseOptions();
+        dialogStatus.dialogOpenState = DialogOpenState.Closed;
     }
+    #endregion
 
+    #region Player Interaction 
+    public void PlayerDialogInteract()
+    {
+        if(dialogStatus.dialogOpenState != DialogOpenState.Closed)
+        {
+            switch (dialogStatus.dialogType)
+            {
+                case DialogType.NoResponseAuto:
+                    // interactionn does nothing?
+                    Debug.Log("PlayerDialogInterac.NoResponseAuto... Do nothing for now...or hide");
+                    EndDialog();
+                    break;
+                case DialogType.NoResponseButConfirmation:
+                    // either continue to next dialog... or hide...
+                    Debug.Log("PlayerDialogInteract.NoResponseButConfirmation... Hide dialog for now...");
+                    EndDialog();
+                    break;
+                case DialogType.WithResponses:
+                    Debug.Log("PlayerDialogInteract.WithResponses... Choose Response...");
+                    ChooseResponse(dialogStatus.hoveredResponse);
+                    break;
+            }
+        }
+        Debug.Log("The Dialog is closed...");
+    }
     #endregion
 
     #region Dialog Visiblity
@@ -99,6 +135,7 @@ public class DialogManager : MonoBehaviour
     {
         dialogBox.Hide();
     }
+
     /// <summary>
     /// Shows all response options
     /// </summary>
@@ -109,6 +146,7 @@ public class DialogManager : MonoBehaviour
             dialogResponseOptions[i].Show();
         }
     }
+
     /// <summary>
     /// Shows the amount of responses based on the dialogKey
     /// </summary>
@@ -152,7 +190,6 @@ public class DialogManager : MonoBehaviour
             dialogResponseOptions[i].Hide();
         }
     }
-
     #endregion
 
     #region Typing Dialog
@@ -186,14 +223,88 @@ public class DialogManager : MonoBehaviour
         }
     }
     #endregion
+
+    #region Dialog Status Stuff
+    public void SetDialogStatus(DialogStatus newDialogStatus)
+    {
+        dialogStatus = newDialogStatus;
+    }
+    public void SetDialogStatus(string dialogKey)
+    {
+        dialogStatus.dialogKey = dialogKey;
+        dialogStatus.dialogOpenState = DialogOpenState.Open;
+        dialogStatus.dialogType = GetDialogType(dialogKey);
+        dialogStatus.responseCount =  GetDialogResponseCount(dialogKey);
+        dialogStatus.hoveredResponse = 0; // reset choice to 0.
+    }
+
+    public DialogStatus GetDialogStatus()
+    {
+        return dialogStatus;
+    }
+    #endregion
+
+    #region Responses
+    public void ChooseResponse(int responseChoice)
+    {
+        Debug.Log("Response Choice " + responseChoice);
+        Debug.Log("TODO: Save Choice " + responseChoice);
+        dialogStatus.mostRecentResponse = responseChoice;
+
+        // either continue conversation... forn now close
+        EndDialog();
+    }
+
+    public void SetHoveredResponse(int response)
+    {
+        dialogStatus.hoveredResponse = response;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>success</returns>
+    public bool IncreaseHoveredResponse()
+    {
+        if(dialogStatus.hoveredResponse < dialogStatus.responseCount)
+        {
+            dialogStatus.hoveredResponse++;
+            return true;
+        }
+        else
+        {
+            Debug.Log("At max response");
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>success</returns>
+    public bool DeceaseHoveredResponse()
+    {
+        if (dialogStatus.hoveredResponse > 0)
+        {
+            dialogStatus.hoveredResponse--;
+            return true;
+        }
+        else
+        {
+            Debug.Log("At min response");
+            return false;
+        }
+    }
+    #endregion
 }
 
 public class DialogStatus
 {
-    public DialogOpenState dialogOpenState;
-    public DialogType dialogType;
-    public string dialogKey;
-    public int hoveredResponse;
+    public string dialogKey; // the current dialog key
+    public DialogOpenState dialogOpenState; // is the dialog open or closed
+    public DialogType dialogType; // what dialog type do we have
+    public int responseCount; // current response count
+    public int hoveredResponse; // what option is player 
     public int mostRecentResponse; // what was the last key
 
 }
