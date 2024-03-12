@@ -8,7 +8,7 @@ public class PerspectiveScaler : MonoBehaviour
 
     public float worldLevelSizeScaler = 1; //  default 1, set based on level, player might be LARGE *48 like silver room...
 
-    public bool isOn;
+    public bool isOn = true;
 
     // for current iteration, the focus horizon is always at y = 0 ... then
     // TODO: Have selectable horizon point instead of always 0,0

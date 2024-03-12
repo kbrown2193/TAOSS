@@ -313,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaledTransform: {fileID: 8757006272951274312}
   worldLevelSizeScaler: 1
+  isOn: 1
   farPositionValue: 2
   nearPositionValue: -10
   farSmallSizeFactor: 0.125
