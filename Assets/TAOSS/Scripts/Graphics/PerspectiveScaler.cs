@@ -8,7 +8,10 @@ public class PerspectiveScaler : MonoBehaviour
 
     public float worldLevelSizeScaler = 1; //  default 1, set based on level, player might be LARGE *48 like silver room...
 
+    public bool isOn;
+
     // for current iteration, the focus horizon is always at y = 0 ... then
+    // TODO: Have selectable horizon point instead of always 0,0
     public float farPositionValue = 2f; // MUST BE POSITIVE
     public float nearPositionValue = -10f; // MUST BE NEGATIVE
 
@@ -23,7 +26,10 @@ public class PerspectiveScaler : MonoBehaviour
     {
         //Debug.Log("Current Position = " + transform.position.ToString());
         //Debug.Log("Current scale = " + transform.localScale.ToString());
-        ScaleTransformByWorldPosition();
+        if(isOn)
+        {
+            ScaleTransformByWorldPosition();
+        }
     }
 
     public void ScaleTransformByWorldPosition()
@@ -87,4 +93,30 @@ public class PerspectiveScaler : MonoBehaviour
         worldLevelSizeScaler = value;
     }
 
+    public void SetIsOn(bool value)
+    {
+        isOn = value;
+    }
+    public void ToggleIsOn()
+    { 
+        isOn = !isOn;
+    }
+    public void TurnOn()
+    {
+        isOn ^= true; // autocomplete... what is ^= operator ?... not good documentation online?
+        // ^= true always yields true?
+        if(!isOn)
+        {
+            isOn |= true; // autompleted != ... since | true, is always true
+            // is this more performant than a simple = statment ????
+        }
+    }
+    public void TurnOff()
+    {
+        if(isOn)
+        {
+            isOn &= false; // autompleted &=... since & false will always return false
+            // is this more performant than a simple = statment ????
+        }
+    }
 }

@@ -62,6 +62,18 @@ public class Player : MonoBehaviour
         RefreshPlayerControllers();
     }
 
+    public void SetPerspectiveScalerIsOn(bool value)
+    {
+        if (perspectiveScaler != null)
+        {
+            perspectiveScaler.SetIsOn(value);
+        }
+        else
+        {
+            Debug.LogWarning("Null perspective scaler...");
+        }
+    }
+
     public void SetWorldLevelSizeScaler(float value)
     {
         worldLevelSizeScaler = value;
