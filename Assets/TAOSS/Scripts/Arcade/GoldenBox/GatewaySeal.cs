@@ -19,6 +19,14 @@ public class GatewaySeal : MonoBehaviour
 
     /*
      * */
+    private void Start()
+    {
+        lockDatas = new LockData[4]; // default creation...  did not fix..
+        // could load...
+        Debug.LogWarning("Setting Lock Datas from game data"); // maybe do more sercure checks...
+        lockDatas = GameManager.Instance.gameData.gatewaylockDatas;
+    }
+
     private void Update()
     {
         // testing Locks
@@ -28,6 +36,8 @@ public class GatewaySeal : MonoBehaviour
             for(int i = 0; i < locksIsLocked.Length; i++)
             {
                 SetLockIsLocked(i, true);
+
+                SaveLockDatas();
             }
         }
         if(Input.GetKeyDown(KeyCode.K))
@@ -36,6 +46,8 @@ public class GatewaySeal : MonoBehaviour
             for (int i = 0; i < locksIsLocked.Length; i++)
             {
                 SetLockIsLocked(i, false);
+
+                SaveLockDatas();
             }
         }
     }
@@ -43,16 +55,40 @@ public class GatewaySeal : MonoBehaviour
      */ 
 
     #region Locks
+    // 3 different gets...
     public bool [] LocksIsLocked
         { get { return locksIsLocked; } }
 
     public bool [] GetLocksIsLocked() {
         return locksIsLocked; }
 
+    public LockData[] GetLockDatas()
+    {
+        return lockDatas;
+    }
+    public void SetLockDatas(LockData[] newLockDatas)
+    {
+        lockDatas = newLockDatas;
+    }
+    // unused? just direct set beecauase is public right now
+    public void SetLockDataIsLocked(int index, bool value)
+    {
+        lockDatas[index].isLocked = value;
+    }
+
+
     public void SetLockIsLocked(int index, bool value)
     {
-        Debug.Log("Setting Lock is Locked" + index + "] to " + value);
+        Debug.Log("Setting Lock is Locked[" + index + "] to " + value);
         locksIsLocked[index] = value;
+        if(lockDatas != null)
+        {
+            lockDatas[index].isLocked = value;
+        }
+        else
+        {
+            Debug.LogWarning("Lock Data Is UNITIALIZED");
+        }    
         SetLockSpriteBasedOnState(index);
         CheckIfGatewayIsUnlocked();
         SetDoorSpriteBasedOnState();
@@ -84,6 +120,12 @@ public class GatewaySeal : MonoBehaviour
     #endregion
 
     #region Saving and Loading Data
+    public void LoadLockData()
+    {
+        //GameManager.Instance.LoadGameData();
+        Debug.Log("Loading Lock Datas...");
+        lockDatas = GameManager.Instance.gameData.gatewaylockDatas;
+    }
     public void SaveLockDatas()
     {
         // set lock data from islocked
@@ -96,9 +138,11 @@ public class GatewaySeal : MonoBehaviour
             //Debug.Log("Lock[" + i + "] = " + locksIsLocked[i]);
         }
 
-        Debug.Log("TODO: WHERE TO SAVE THIS DATA... TODO");
+        Debug.Log("TESTING: WHERE TO SAVE THIS DATA...");
         // something like...
         //GameManager.SaveGatewayLocksDatas(LockData lockDatas)
+        GameManager.Instance.SaveGatewayLockDatas(lockDatas);
+
     }
     // TODO: LOAD DATA
     public void LoadLockDatas()
@@ -151,4 +195,17 @@ public class LockData
     public bool isLocked;
     public int lockIndex; // index in an array
     //public string Description;
+    // Default creating 1
+    public LockData()
+    {
+        lockKey = "DEFAULT";
+        isLocked = true;
+        lockIndex = 0; // only 
+    }
+    public LockData(string theLockKey, bool theIsLocked, int theLockIndex)
+    {
+        lockKey = theLockKey;
+        isLocked = theIsLocked;
+        lockIndex = theLockIndex;
+    }
 }

@@ -99,7 +99,7 @@ public class LoadGameMenu : MonoBehaviour
             Debug.Log("TODO: load to currrent checkpoint");
             if (gameData != null)
             {
-                // game data exists
+                // game data exists, so checpoint check...
                 if (gameData.lastCheckpoint == 0)
                 {
                     // default initial start
@@ -110,6 +110,8 @@ public class LoadGameMenu : MonoBehaviour
                 else
                 {
                     Debug.Log("TODO Implement where to load for this checkpoint" + gameData.lastCheckpoint.ToString());
+                    CinematicsManager.Instance.PlayCinematic("TAOSS_C0_L00_00_Intro"); // CHANGE THIS?
+                    mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut); // set main menu fade out page
                 }
             }
             else

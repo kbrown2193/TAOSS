@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
     {
         gameData = GameFileHandler.Instance.LoadSave(gameName);
     }
+    public GameData GetGameData()
+    {
+        return gameData;
+    }
 
     public void SaveNewCheckpoint(int checkpoint)
     {
@@ -73,6 +77,26 @@ public class GameManager : MonoBehaviour
         Debug.Log("Saving new playerCharacterVisualData, headSelection is now" + gameData.playerCharacterVisualData.headSelection);
         SaveGameData();
     }
+    public void SaveLifetimeCampaignData(LifetimeCampaignData newLifetimeCampaignData)
+    {
+        Debug.Log("TODO: Saving Campaign Data... ");
+        gameData.lifetimeCampaignData = newLifetimeCampaignData;
+        SaveGameData();
+    }
+
+    public void SaveCampaignData(CampaignData campaignData)
+    {
+        Debug.Log("TODO: Saving Campaign Data... ");
+        gameData.campaignData = campaignData;
+        SaveGameData();
+    }
+    public void SaveGatewayLockDatas(LockData[] lockDatas)
+    {
+        Debug.Log("TESTING: Saving Gateway Lock Data... ");
+        gameData.gatewaylockDatas = lockDatas;
+        SaveGameData();
+    }
+
 
     public int GetCurrentCheckpoint()
     {
