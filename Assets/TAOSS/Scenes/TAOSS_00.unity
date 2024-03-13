@@ -1798,7 +1798,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_2
+      value: Portal_Static_GoldenBox_Gateway_To_Center_2
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -14370,7 +14370,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_1
+      value: Portal_Static_GoldenBox_Star_To_GoldenBox_Center_1
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -15529,6 +15529,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 433317767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &641878384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1042118074}
+    m_Modifications:
+    - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_Name
+      value: Portal_Static_GoldenBox_Gateway_To_Artifacts
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: portalKey
+      value: GoldenBox_Gateway_To_GoldenBox_Artifacts
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+--- !u!4 &641878385 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+  m_PrefabInstance: {fileID: 641878384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &647162180
 GameObject:
   m_ObjectHideFlags: 0
@@ -15928,7 +15994,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_2
+      value: Portal_Static_GoldenBox_Artifacts_To_GoldenBox_Center_2
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -16271,6 +16337,7 @@ Transform:
   m_Children:
   - {fileID: 1301781234}
   - {fileID: 698783167}
+  - {fileID: 1340512757}
   m_Father: {fileID: 161703701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809913758
@@ -17736,7 +17803,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_1
+      value: Portal_Static_GoldenBox_Moon_To_GoldenBox_Center_1
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -18414,6 +18481,7 @@ Transform:
   m_Children:
   - {fileID: 1415829440}
   - {fileID: 215760578}
+  - {fileID: 641878385}
   m_Father: {fileID: 1084507424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048009624
@@ -19097,6 +19165,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4340063211032641613, guid: a3722966872f77f4e86dc4a234640032, type: 3}
   m_PrefabInstance: {fileID: 1190578582}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1191387363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1185239744849762030, guid: 1d0aacf7456610142880ae8785461e88, type: 3}
+  m_PrefabInstance: {fileID: 7680828419078777031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7809f30ed9b2143aa215740afe6fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1197768050
 GameObject:
   m_ObjectHideFlags: 0
@@ -19423,7 +19502,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_2
+      value: Portal_Static_GoldenBox_Moon_To_GoldenBox_Center_2
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -20080,7 +20159,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_1
+      value: Portal_Static_GoldenBox_Artifacts_To_GoldenBox_Center_1
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -20088,7 +20167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.64
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20493,6 +20572,72 @@ Transform:
   - {fileID: 298639227}
   m_Father: {fileID: 431275006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1340512756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 785709821}
+    m_Modifications:
+    - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_Name
+      value: Portal_Static_GoldenBox_Artofacts_SilverRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: portalKey
+      value: GoldenBox_Artifacts_To_Arcade_SilverRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+--- !u!4 &1340512757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
+  m_PrefabInstance: {fileID: 1340512756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1374223281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8013840918886693670, guid: eacab45eb3e661340b7876d893327199, type: 3}
@@ -20680,7 +20825,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_1
+      value: Portal_Static_GoldenBox_Gateway_To_Center_1
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -20688,7 +20833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.64
+      value: 11.85
       objectReference: {fileID: 0}
     - target: {fileID: 8502674256114032041, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20914,7 +21059,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_2
+      value: Portal_Static_GoldenBox_Star_To_GoldenBox_Center_2
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -21439,7 +21584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_2
+      value: Portal_Static_GoldenBox_Bird_To_GoldenBox_Center_2
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -23711,7 +23856,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_1
+      value: Portal_Static_GoldenBox_Beast_To_GoldenBox_Center_1
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -39845,7 +39990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_1
+      value: Portal_Static_GoldenBox_Bird_To_GoldenBox_Center_1
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -43806,7 +43951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486388875363546317, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: m_Name
-      value: Portal_Static_GoldenBox_XXX_To_2
+      value: Portal_Static_GoldenBox_Beast_GoldenBox_Center_2
       objectReference: {fileID: 0}
     - target: {fileID: 7989361765134949545, guid: d3b2a8c25d73ddc42a353cfdc4192039, type: 3}
       propertyPath: portalKey
@@ -46142,14 +46287,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 1376188152438947398, guid: bdde14598f8b1d5458ea6fc861a8bf85, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6813830024246730150, guid: bdde14598f8b1d5458ea6fc861a8bf85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1071852748}
+    - target: {fileID: 6813830024246730150, guid: bdde14598f8b1d5458ea6fc861a8bf85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1191387363}
     - target: {fileID: 7269579194708755448, guid: bdde14598f8b1d5458ea6fc861a8bf85, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

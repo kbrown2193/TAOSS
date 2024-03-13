@@ -67,6 +67,12 @@ public class WorldLevelData
 
     public float worldLevelSizeMultiplier;
     public float worldLevelMovementSpeedMultiplier;
+
+    // Audio
+    public string songKey; // the main song it will attempt to get when loading this level...
+    // can add additional mabye if more than one song asociated.. for now
+    public string[] additionalSongKeys;
+
     //public Vector3Int playerCellSpawnPosition; // entities spawn positions... ?
 
     // entities

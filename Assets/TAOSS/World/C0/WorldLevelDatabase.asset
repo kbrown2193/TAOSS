@@ -13,26 +13,6 @@ MonoBehaviour:
   m_Name: WorldLevelDatabase
   m_EditorClassIdentifier: 
   worldLevelDataList:
-  - worldLevelKey: Arcade_Entrance
-    isUnlocked: 1
-    worldLevelSceneName: TAOSS_00
-    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/Entrance
-    worldLevlGrids:
-    - {fileID: 4862284993178486230, guid: eeadf6fd46b102548bff35744bb7447a, type: 3}
-    - {fileID: 4862284993178486230, guid: eeadf6fd46b102548bff35744bb7447a, type: 3}
-    - {fileID: 1167149453470211438, guid: 07b66b29131ae8a498764339d2ac2de3, type: 3}
-    worldLevelTilemaps:
-    - {fileID: 5313097416050373419, guid: f48a6396ab6f17242a8374bdbcadc7aa, type: 3}
-    - {fileID: 503245957503044036, guid: 519a83f2590936b41864c2d85c138c19, type: 3}
-    - {fileID: 417894763535126322, guid: 48693c8defbf1d149b386acce9aba795, type: 3}
-    playerSpawnPosition: {x: 0, y: -4, z: 0}
-    playerSpawnDirection: {x: 0, y: 0, z: 0}
-    cameraSpawnPosition: {x: 0, y: 0, z: 0}
-    cameraSpawnDirection: {x: 0, y: 0, z: 0}
-    cameraSize: {x: 9, y: 6}
-    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
-    worldLevelSizeMultiplier: 1.1
-    worldLevelMovementSpeedMultiplier: 1.1
   - worldLevelKey: SycamoreStreet
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -71,6 +51,30 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Town_Theme_Electric
+    additionalSongKeys: []
+  - worldLevelKey: Arcade_Entrance
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/Arcade/Entrance
+    worldLevlGrids:
+    - {fileID: 4862284993178486230, guid: eeadf6fd46b102548bff35744bb7447a, type: 3}
+    - {fileID: 4862284993178486230, guid: eeadf6fd46b102548bff35744bb7447a, type: 3}
+    - {fileID: 1167149453470211438, guid: 07b66b29131ae8a498764339d2ac2de3, type: 3}
+    worldLevelTilemaps:
+    - {fileID: 5313097416050373419, guid: f48a6396ab6f17242a8374bdbcadc7aa, type: 3}
+    - {fileID: 503245957503044036, guid: 519a83f2590936b41864c2d85c138c19, type: 3}
+    - {fileID: 417894763535126322, guid: 48693c8defbf1d149b386acce9aba795, type: 3}
+    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1.1
+    worldLevelMovementSpeedMultiplier: 1.1
+    songKey: Town_Theme_Galaxy
+    additionalSongKeys: []
   - worldLevelKey: Arcade_SilverRoom
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -87,6 +91,8 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 20
     worldLevelMovementSpeedMultiplier: 10
+    songKey: Town_Theme_Galaxy
+    additionalSongKeys: []
   - worldLevelKey: Arcade_SilverRoom_GoldenBox
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -103,6 +109,8 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Eerie_Synth_D_Hold
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Center
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -119,6 +127,8 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Eerie_Synth_D_Hold
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Bird
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -135,6 +145,8 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Solemn_Strings_Main
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Beast
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -151,6 +163,8 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Beast_A_01
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Star
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -167,6 +181,8 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Electric_Blue
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Moon
     isUnlocked: 1
     worldLevelSceneName: TAOSS_00
@@ -183,8 +199,10 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Moon_A
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Gateway
-    isUnlocked: 0
+    isUnlocked: 1
     worldLevelSceneName: TAOSS_00
     worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Gateway
     worldLevlGrids:
@@ -199,8 +217,10 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Gateway_Main
+    additionalSongKeys: []
   - worldLevelKey: GoldenBox_Artifacts
-    isUnlocked: 0
+    isUnlocked: 1
     worldLevelSceneName: TAOSS_00
     worldLevelHierarchyName: GameWorld_C0_L00/Arcade/SilverRoom/GoldenBox/GameScreen/Artifacts
     worldLevlGrids:
@@ -215,3 +235,5 @@ MonoBehaviour:
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
     worldLevelMovementSpeedMultiplier: 1
+    songKey: Artifacts_A_01
+    additionalSongKeys: []

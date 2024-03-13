@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: MusicDatabase
   m_EditorClassIdentifier: 
   musicDataList:
-  - songKey: Town_Theme_Galaxy
-    audioClip: {fileID: 8300000, guid: 1931003d6a30c3b4ab231dd2608724b4, type: 3}
-    title: Town Theme - Galaxy
-    artist: Kyle Brown
-    album: Guiding Paths
-    description: A town theme with a galaxy voice
-    associatedWorldLevelKeys: []
   - songKey: Town_Theme_Electric
     audioClip: {fileID: 8300000, guid: d80c1b8375660cc4fb538eff8d8bd130, type: 3}
     title: Town Theme - Electric
     artist: Kyle Brown
     album: Guiding Paths
     description: A town theme with a electric piano voice
+    associatedWorldLevelKeys: []
+  - songKey: Town_Theme_Galaxy
+    audioClip: {fileID: 8300000, guid: 1931003d6a30c3b4ab231dd2608724b4, type: 3}
+    title: Town Theme - Galaxy
+    artist: Kyle Brown
+    album: Guiding Paths
+    description: A town theme with a galaxy voice
     associatedWorldLevelKeys: []
   - songKey: Eerie_Lofi_Harp
     audioClip: {fileID: 8300000, guid: 378b5bbab3f566043a9a6278c0b266ec, type: 3}
@@ -41,15 +41,8 @@ MonoBehaviour:
     album: Titan
     description: A low droning ambiance
     associatedWorldLevelKeys: []
-  - songKey: Electric_Blue
-    audioClip: {fileID: 8300000, guid: f0023169c918eb142a157cd10770e1e3, type: 3}
-    title: Electric Blue
-    artist: Kyle Brown
-    album: Titan
-    description: A spacey feel ambiance.
-    associatedWorldLevelKeys: []
   - songKey: Solemn_Strings_Main
-    audioClip: {fileID: 8300000, guid: f0023169c918eb142a157cd10770e1e3, type: 3}
+    audioClip: {fileID: 8300000, guid: 0188ac2e6c1b3c740908f4a8565a12f2, type: 3}
     title: Solemn Strings - Main
     artist: Kyle Brown
     album: 
@@ -61,4 +54,102 @@ MonoBehaviour:
     artist: Kyle Brown
     album: KB Soundtracks 2023
     description: A rising tension strings song
+    associatedWorldLevelKeys: []
+  - songKey: Beast_A_01
+    audioClip: {fileID: 8300000, guid: 690ad20814d427d4380c8b769af32307, type: 3}
+    title: Beast Low Growl
+    artist: Kyle Brown
+    album: KB_XX
+    description: A slowly increasing low bass growl
+    associatedWorldLevelKeys: []
+  - songKey: Beast_A_02
+    audioClip: {fileID: 8300000, guid: 92697e38a3a6aa24db46e5a68be8f59e, type: 3}
+    title: Wow Lead Fast 123 Beast
+    artist: Kyle Brown
+    album: KB_XX
+    description: A slowly increasing low bass growl
+    associatedWorldLevelKeys: []
+  - songKey: Beast_B_01
+    audioClip: {fileID: 8300000, guid: 3e2f9986a5e40484e9beffc22c097f05, type: 3}
+    title: Low Strings Rising
+    artist: Kyle Brown
+    album: KB_XX
+    description: 
+    associatedWorldLevelKeys: []
+  - songKey: Beast_B_02
+    audioClip: {fileID: 8300000, guid: 7e95597702d658f4ba974bf0c8a73e31, type: 3}
+    title: Strings Speeding Up
+    artist: Kyle Brown
+    album: KB_XX
+    description: 
+    associatedWorldLevelKeys: []
+  - songKey: Beast_B_03
+    audioClip: {fileID: 8300000, guid: 44eaa8e1b1373284baf9e1a37c24213d, type: 3}
+    title: Strings Main Duel
+    artist: Kyle Brown
+    album: KB_XX
+    description: 
+    associatedWorldLevelKeys: []
+  - songKey: Electric_Blue
+    audioClip: {fileID: 8300000, guid: f0023169c918eb142a157cd10770e1e3, type: 3}
+    title: Electric Blue
+    artist: Kyle Brown
+    album: Titan
+    description: A spacey feel ambiance.
+    associatedWorldLevelKeys: []
+  - songKey: Star_B
+    audioClip: {fileID: 8300000, guid: 8a8383eb2f4c6ab4ab9819b6e6a59bdd, type: 3}
+    title: Sci fi Lead Synth 2023-07-14
+    artist: Kyle Brown
+    album: KB Soundtracks 2023
+    description: A punchy synth line.
+    associatedWorldLevelKeys: []
+  - songKey: Moon_A
+    audioClip: {fileID: 8300000, guid: c8361b422c68d8d448358239cdd0df0c, type: 3}
+    title: Ab Hold Heartbeat
+    artist: Kyle Brown
+    album: KB Soundtracks 2023
+    description: A bassy synthy sound.
+    associatedWorldLevelKeys: []
+  - songKey: Moon_B
+    audioClip: {fileID: 8300000, guid: efdc8b7e468b46e488b152baf37b738e, type: 3}
+    title: Sci fi Lead Synth ReverbFX 2023-07-14
+    artist: Kyle Brown
+    album: KB Soundtracks 2023
+    description: An echoey reverby sounding effect
+    associatedWorldLevelKeys: []
+  - songKey: Gateway_Main
+    audioClip: {fileID: 8300000, guid: f4f72f1c9322ba94baf661a4790cba01, type: 3}
+    title: Gateway Locks
+    artist: Kyle Brown
+    album: KB Soundtracks 2023
+    description: A banging beat to fly on through.
+    associatedWorldLevelKeys: []
+  - songKey: Artifacts_A_01
+    audioClip: {fileID: 8300000, guid: 16d2f766488f03540bea1097998158ef, type: 3}
+    title: Artifacts A 1
+    artist: Kyle Brown
+    album: Mythology Retold Soundtrack
+    description: Synthy FX sounding. Staicasey
+    associatedWorldLevelKeys: []
+  - songKey: Artifacts_A_02
+    audioClip: {fileID: 8300000, guid: b678564e42ad2014baa6dd604dc9082a, type: 3}
+    title: Artifacts A 2
+    artist: Kyle Brown
+    album: Mythology Retold Soundtrack
+    description: 'Shorter '
+    associatedWorldLevelKeys: []
+  - songKey: Artifacts_A_03
+    audioClip: {fileID: 8300000, guid: 7dfecc9e4efe03a4aa5763c8faa37794, type: 3}
+    title: Artifacts A 3
+    artist: Kyle Brown
+    album: Mythology Retold Soundtrack
+    description: Higher ending
+    associatedWorldLevelKeys: []
+  - songKey: Outro_Harp_A
+    audioClip: {fileID: 8300000, guid: c8be0273fe31d1842a5bfc061e648433, type: 3}
+    title: Song 2 Harp Outro
+    artist: Kyle Brown
+    album: KB_XX
+    description: A soft sounding slow harp.
     associatedWorldLevelKeys: []

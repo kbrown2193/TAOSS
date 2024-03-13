@@ -41,6 +41,8 @@ public class MusicDatabase : ScriptableObject
 
     public AudioClip GetAudioClipFromSongKey(string songKey)
     {
+        Debug.Log("Fetching Audio Clip from SongKey " + songKey);
+        Debug.Log("Fetching Audio Clip name is " + GetMusicData(songKey).audioClip.name);
         return GetMusicData(songKey).audioClip;
     }
     public AudioClip GetAudioClipFromWorldLevelKey(string worldLevelKey)

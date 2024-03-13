@@ -98,19 +98,26 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
 
                             }
 
+                            // PLAYER Initialization
                             // IF NEW PLAYER IN SCENE, add flag in world level data?
                             GameManager.Instance.SetPlayer(player);
 
-                            // for now.. go above
-
                             PositionPlayer(destinationWorldLevelData);
-
                             SetPlayerWorldLevelValues(destinationWorldLevelData);
 
+                            // CAMERA INITIALIZATION
                             ResizeCamera(destinationWorldLevelData);
 
-                            //GameObject.Find(destinationWorldLevelData.worldLevelHiearchyName).SetActive(true);
-                            //GameObject.Find(startingWorldLevelData.worldLevelHiearchyName).SetActive(false);
+                            // MUSIC INITIALIZATION
+                            if (destinationWorldLevelData.songKey != startingWorldLevelData.songKey)
+                            {
+                                AudioManager.Instance.PlayMusic(destinationWorldLevelData.songKey);
+                            }
+                            else
+                            {
+                                Debug.Log("Sane Music songKey... not playing");
+                            }
+                            //AudioManager.Instance.PlayMusicByWorldLevelKey(destinationLevel); // requires a more world level data manager... todo but for now using above
                         }
                         else
                         {
@@ -200,6 +207,12 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
         return GameObject.FindAnyObjectByType<Player>();
     }
 
+    public WorldLevelData GetWorldLevelData(string worldLevelKey)
+    {
+        return worldLevelDatabase.GetWorldLevelData(worldLevelKey);
+    }
+
+    #region Game Object Enabling 
     public void EnableParents(GameObject go)
     {
         Debug.Log("Enabling parents for " + go.name);
@@ -218,4 +231,5 @@ public class CustomLevelLoadingTAOSS : MonoBehaviour
             }
         }
     }
+    #endregion
 }

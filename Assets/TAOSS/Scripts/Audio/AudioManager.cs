@@ -105,16 +105,60 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip audioClip)
     {
         if (audioClip == null)
-        { 
+        {
             // fade out of
             // to do... fade out of old and fade into new...
             // for now just play 0th index
+
+            // double check to see if attempting to  play same clip
+            // DOES NOT CHECK HERE...
+            // Checking that in custom level loading TAOSS
+
+            // Set Clip
+            Debug.Log("Audio clip  name" + audioClip.name);
             musicAudioSources[currentMusicChannel].clip = audioClip;
+
+            // Play
+            // TODO: MAKE IT SMOOTH / FADE OUT OLD, FADE IN NEW
+            musicAudioSources[currentMusicChannel].Play();
+        }
+        else
+        {
+            Debug.LogError("Audio clip is null");
         }
     }
     public void PlayMusic(string songKey)
     {
-        PlayMusic(GetMusicAudioClip(songKey));
+        Debug.Log("PlayMusic: songKey = " + songKey);
+        AudioClip newAudioClip = GetMusicAudioClip(songKey);
+        Debug.Log("newAudioClip.name = " +newAudioClip.name);
+
+        //PlayMusic(GetMusicAudioClip(songKey));// was
+        //PlayMusic(newAudioClip);
+
+        // OR
+
+
+        // Set Clip
+        //Debug.LogError("Audio clip  name" + audioClip.name);
+        // TODO: MAKE IT SMOOTH / FADE OUT OLD, FADE IN NEW
+        musicAudioSources[currentMusicChannel].clip = newAudioClip;
+
+        // Play
+        musicAudioSources[currentMusicChannel].Play();
+    }
+    /// <summary>
+    /// TODO: Make World Level data easily accessible
+    /// is currently on CustomLevelLoadingTAOSS
+    /// </summary>
+    /// <param name="worldLevelKey"></param>
+    public void PlayMusicByWorldLevelKey(string worldLevelKey)
+    {
+        Debug.LogError("TODO: PlayMusicByWorldLevelKey ... NOT SET UP...");
+        // Requires world level data to be be more easily accessbile...
+        // TODO>...
+        // WorldLevelData worldLevelData = CustomLevelLoadingTAOSS.Instance.GetWorldLevelData
+        // PlayMusic(worldLevelData.songKey);
     }
 
     public AudioClip GetMusicAudioClip(string songKey)
