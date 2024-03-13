@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     // FOR NOW LATER CAN BE MORE EFFICIENT?
     [SerializeField] private Sprite[] backgroundSprites;
 
+    [SerializeField] private Button titleScreenContinueButton; // titleScreen 
+
     public enum MainMenuPage
     {
         TitleMenu, // the "Main Menu" with selections of New Game, Load Game, Continue Game, Settings, an
@@ -81,7 +83,10 @@ public class MainMenu : MonoBehaviour
         if (gameName == "VERY_FIRST_GAME_01_23_45_67_89")
         {
             // first startup....
+            Debug.Log("Its the very first game....");
             SetTitleMenuBackground(0);
+
+            titleScreenContinueButton.image.color = Color.red;
         }
         else
         {
@@ -99,6 +104,16 @@ public class MainMenu : MonoBehaviour
                 // until some checkpoint set to another background... and so forth
                 SetTitleMenuBackground(2);
             }
+
+            ApplicationData applicationData = ApplicationDataManager.Instance.LoadApplicationData();
+            if (applicationData.lastPlayed != null)
+            {
+                if(GameFileHandler.Instance.SaveExists(applicationData.lastPlayed))
+                {
+                    Debug.Log("Save file exists, continue button is good");
+                    titleScreenContinueButton.image.color = Color.green;
+                }
+            }
         }
 
         SetMainMenuPage(0);
@@ -115,5 +130,10 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogError("Invalid background index");
         }
+    }
+
+    public void TitileScreenContinuePress()
+    {
+        GameManager.Instance.TitleScreenContinue(); // continue game
     }
 }

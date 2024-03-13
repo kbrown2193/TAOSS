@@ -93,6 +93,10 @@ public class LoadGameMenu : MonoBehaviour
         // Loading logic
         if (!string.IsNullOrEmpty(currentSelectedGameSave))
         {
+            GameManager.Instance.LoadGameInit(currentSelectedGameSave);
+            /*
+             * 
+             * 
             // Load the selected game save
             Debug.Log("Loading game save: " + currentSelectedGameSave);
             GameData gameData = GameFileHandler.Instance.LoadSave(currentSelectedGameSave); 
@@ -122,6 +126,9 @@ public class LoadGameMenu : MonoBehaviour
             {
                 Debug.LogWarning("No Game Data Exists!");
             }
+            *
+            *
+            */
         }
         else
         {

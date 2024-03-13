@@ -81,12 +81,13 @@ public class TAOSSPreloader : MonoBehaviour
 
             // error out
             Debug.LogError("No Main Menu Exists!");
+            return;
         }
 
         if (gameName == "VERY_FIRST_GAME_01_23_45_67_89")
         {
             // default setup..
-
+            Debug.Log("Very First Game...");
         }
         else
         {

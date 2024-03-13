@@ -54,10 +54,9 @@ public class ApplicationDataManager : MonoBehaviour
         {
             Debug.Log("Creating User Profiles Directory");
             Directory.CreateDirectory(saveFolderPath);
-            
-            // There probably isnt a default profile but lets check to be sure
 
-            if(CheckIfDefaultUserProfileExists())
+            // There probably isnt a default profile but lets check to be sure
+            if (CheckIfDefaultUserProfileExists())
             {
                 // there is default profile somehow
                 Debug.Log("There is a default profile file, no action needed to create file");
@@ -67,7 +66,6 @@ public class ApplicationDataManager : MonoBehaviour
                 // Create for first time setup
                 CreateDefaultProfile();
             }
-
         }
     }
     #endregion
@@ -79,11 +77,31 @@ public class ApplicationDataManager : MonoBehaviour
         return userProfile;
     }
 
+    /// <summary>
+    /// Save file name should be the userProfile
+    /// </summary>
+    /// <param name="saveFileName"></param>
+    /// <param name="newApplicationData"></param>
     public void SaveApplicationData(string saveFileName, ApplicationData newApplicationData)
     {
         userProfile = saveFileName;
         //string userProfile, string lastPlayed
         applicationData = newApplicationData;
+
+        string fullSaveFileName = saveFileName + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
+
+        // Serialize the updated game data to JSON
+        string json = JsonUtility.ToJson(applicationData);
+
+        // Overwrite the existing save file with the updated data
+        File.WriteAllText(saveFilePath, json);
+    }
+    public void SaveCurrentApplicationData(string saveFileName)
+    {
+        userProfile = saveFileName;
+        //string userProfile, string lastPlayed
+        //applicationData = newApplicationData;
 
         string fullSaveFileName = saveFileName + fileExtension;
         string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
@@ -119,7 +137,34 @@ public class ApplicationDataManager : MonoBehaviour
             return null;
         }
     }
+    // Load a application data
+    /// <summary>
+    /// if no arguments, use userprofiel
+    /// </summary>
+    /// <returns></returns>
+    public ApplicationData LoadApplicationData()
+    {
+        string fullSaveFileName = userProfile + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
 
+        // Check if the save file exists before attempting to load it
+        if (File.Exists(saveFilePath))
+        {
+            Debug.Log("Loading application data at " + saveFilePath);
+            // Read the JSON data from the file
+            string json = File.ReadAllText(saveFilePath);
+
+            // Deserialize the JSON data to GameData object
+            ApplicationData newApplicationData = JsonUtility.FromJson<ApplicationData>(json);
+            applicationData = newApplicationData;
+            return applicationData;
+        }
+        else
+        {
+            Debug.LogError("Save file does not exist: " + fullSaveFileName);
+            return null;
+        }
+    }
 
     public void CreateDefaultProfile()
     {
@@ -192,6 +237,18 @@ public class ApplicationDataManager : MonoBehaviour
         applicationData.controlSettings = controlSettings;
         applicationData.gameSettings = gameSettings;
         SaveApplicationData(applicationData.userProfile, applicationData);
+    }
+    #endregion
+
+    #region Last Played...
+    public void SetLastPlayed(string lastPlayed)
+    {
+        applicationData.lastPlayed = lastPlayed;
+    }
+    public void SetLastPlayedAndSave(string lastPlayed)
+    {
+        applicationData.lastPlayed = lastPlayed;
+        SaveCurrentApplicationData(applicationData.userProfile);
     }
     #endregion
 }

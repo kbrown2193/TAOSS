@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public Player player; // handle the player
 
+    //[SerializeField] public CustomLevelLoadingTAOSS customLevelLoading; // implement way to easily get world level info...
+
     #region Singleton
     private static GameManager instance;
 
@@ -39,6 +41,41 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    #endregion
+
+    #region Application Data Managment
+
+    /// <summary>
+    /// DOES NOT SAVE DATA HERE, only sets
+    /// use SetApplicationDataLastPlayedAndSave instead if needed
+    /// </summary>
+    public void SetApplicationDataLastPlayed()
+    {
+        Debug.LogWarning("Does not save application data here");// 
+        string lastPlayed = gameData.gameName;
+        ApplicationDataManager.Instance.SetLastPlayed(lastPlayed);
+    }
+    /// <summary>
+    /// DOES NOT SAVE DATA HERE, only sets
+    /// use SetApplicationDataLastPlayedAndSave instead if needed
+    /// </summary>
+    /// <param name="lastPlayed"></param>
+    public void SetApplicationDataLastPlayed(string lastPlayed)
+    {
+        Debug.LogWarning("Does not save application data here");// 
+        ApplicationDataManager.Instance.SetLastPlayed(lastPlayed);
+    }
+    public void SetApplicationDataLastPlayedAndSave()
+    {
+        string lastPlayed = gameData.gameName;
+        ApplicationDataManager.Instance.SetLastPlayedAndSave(lastPlayed);
+    }
+    public void SetApplicationDataLastPlayedAndSave(string lastPlayed)
+    {
+        ApplicationDataManager.Instance.SetLastPlayedAndSave(lastPlayed);
+    }
+
+
     #endregion
 
     #region Game Data Management
@@ -117,6 +154,57 @@ public class GameManager : MonoBehaviour
     public int GetCurrentCheckpoint()
     {
         return gameData.lastCheckpoint;
+    }
+    #endregion
+
+    #region Game Init
+    public void TitleScreenContinue()
+    {
+
+        Debug.Log("GM.TitleScreenContinue");
+        // ensure last played exists
+        ApplicationData applicationData = ApplicationDataManager.Instance.LoadApplicationData();
+        if (applicationData.lastPlayed != null)
+        {
+            if (GameFileHandler.Instance.SaveExists(applicationData.lastPlayed))
+            {
+                Debug.Log("Save file exists");
+                LoadGameInit(applicationData.lastPlayed);
+            }
+        }
+        //if(gameData != )
+    }
+    public void LoadGameInit(string gameName)
+    {
+        // Load the selected game save
+        Debug.Log("Loading game save: " + gameName);
+        GameData gameData = GameFileHandler.Instance.LoadSave(gameName);
+
+        Debug.Log("TODO: load to currrent checkpoint");
+        if (gameData != null)
+        {
+            GameManager.Instance.SetReferenceGameData(gameData);
+
+            // game data exists, so checpoint check...
+            if (gameData.lastCheckpoint == 0)
+            {
+                // default initial start
+                Debug.Log("Last Checkpoint = 0, playing intro cinematic");
+                CinematicsManager.Instance.PlayCinematic("TAOSS_C0_L00_00_Intro");
+                UIManager.Instance.GetMainMenu().SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut); // set main menu fade out page
+            }
+            else
+            {
+                Debug.Log("TODO Implement where to load for this checkpoint" + gameData.lastCheckpoint.ToString());
+                CinematicsManager.Instance.PlayCinematic("TAOSS_C0_L00_00_Intro"); // CHANGE THIS?
+                UIManager.Instance.GetMainMenu().SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut); // set main menu fade out page
+                GameManager.Instance.LoadGameData(gameData.gameName);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No Game Data Exists!");
+        }
     }
     #endregion
 
