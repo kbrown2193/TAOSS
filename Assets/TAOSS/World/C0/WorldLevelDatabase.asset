@@ -43,7 +43,7 @@ MonoBehaviour:
     - {fileID: 329051961266402825, guid: 69f835409a6aad2459cfb79bb2135163, type: 3}
     - {fileID: 5685225813570505991, guid: f5ad9599d9dae5141961bb7fde06406f, type: 3}
     - {fileID: 8517677924459621536, guid: 0436666d51c73bc4d8b0ca3f23371019, type: 3}
-    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnPosition: {x: 0, y: -7, z: 0}
     playerSpawnDirection: {x: 0, y: 0, z: 0}
     cameraSpawnPosition: {x: 0, y: 0, z: 0}
     cameraSpawnDirection: {x: 0, y: 0, z: 0}

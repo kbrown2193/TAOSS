@@ -15,27 +15,31 @@ MonoBehaviour:
   dialogDataList:
   - dialogKey: L00_S00_00
     dialogType: 0
-    dialogText: This is a test.
+    dialogText: '?: I should check out the arcade.'
     dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
   - dialogKey: L00_S00_01
     dialogType: 0
-    dialogText: 'A second no response auto dalog test. And is a chain '
+    dialogText: '?: Welcome to the Arcade!'
     dialogResponses: []
     isDialogChain: 1
     nextDialogKey: L00_S00_02
   - dialogKey: L00_S00_02
     dialogType: 1
-    dialogText: No Response Confirmation Test... Press... Anything
-    dialogResponses: []
+    dialogText: '?: Enjoy your stay!'
+    dialogResponses:
+    - Thank You!
+    - You 2!
+    - No u
+    - ...
     isDialogChain: 0
     nextDialogKey: 
   - dialogKey: L00_S00_03
     dialogType: 2
-    dialogText: 1 Response Test
+    dialogText: '?: There''s only one game in here...'
     dialogResponses:
-    - Test Response 0
+    - ok...
     isDialogChain: 0
     nextDialogKey: 
   - dialogKey: L00_S00_04
@@ -141,8 +145,8 @@ MonoBehaviour:
     dialogType: 0
     dialogText: '?: ???'
     dialogResponses: []
-    isDialogChain: 0
-    nextDialogKey: 
+    isDialogChain: 1
+    nextDialogKey: L04_S00_01
   - dialogKey: L04_S00_01
     dialogType: 0
     dialogText: 'Star: Shine.'
@@ -194,6 +198,12 @@ MonoBehaviour:
   - dialogKey: L06_S00_00
     dialogType: 0
     dialogText: '?: That''s the last seal.  The way is open.'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L06_S01_00
+    dialogType: 0
+    dialogText: '?: So this is the gateway'
     dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
