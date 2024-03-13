@@ -68,7 +68,16 @@ MonoBehaviour:
       feetColor: {r: 0, g: 0, b: 0, a: 0}
       skinColor: {r: 0, g: 0, b: 0, a: 0}
       eyeColor: {r: 0, g: 0, b: 0, a: 0}
+    lifetimeCampaignData:
+      userProfile: 
+      campaignDatas: []
+    campaignData:
+      campaignKey: 
+      campaignName: 
+      questDatas: []
+    gatewaylockDatas: []
   player: {fileID: 0}
+  gameState: 0
 --- !u!114 &6058198501159449842
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,13 +23,13 @@ public class PlayerCharacterCreator : MonoBehaviour
     private int feetSelection;
 
     // TODO: Colors...
-    private Color hairColor;
-    private Color headColor;
-    private Color torsoColor;
-    private Color legsColor;
-    private Color feetColor;
-    private Color skinColor;
-    private Color eyeColor;
+    private Color hairColor = Color.white;
+    private Color headColor = Color.white;
+    private Color torsoColor = Color.white;
+    private Color legsColor = Color.white;
+    private Color feetColor = Color.white;
+    private Color skinColor = Color.white;
+    private Color eyeColor = Color.white;
 
     private PlayerCharacterVisualData playerCharacterVisualData;
 
@@ -373,6 +373,8 @@ public class PlayerCharacterCreator : MonoBehaviour
     {
         CreateCharacter(); // Create and Save the newly created character
         Debug.Log("TODO:then start game");
+        GameManager.Instance.SetPlayerVisualDataFromGameData();
+        Debug.Log("IS THIS RUNNING???:then start game");
     }
     public void CreateCharacter()
     {
@@ -468,13 +470,13 @@ public class PlayerCharacterVisualData
     public int legsSelection;
     public int feetSelection;
 
-    public Color hairColor;
-    public Color headColor;
-    public Color torsoColor;
-    public Color legsColor;
-    public Color feetColor;
-    public Color skinColor;
-    public Color eyeColor;
+    public Color hairColor = Color.white;
+    public Color headColor = Color.white;
+    public Color torsoColor = Color.white;
+    public Color legsColor = Color.white;
+    public Color feetColor = Color.white;
+    public Color skinColor = Color.white;
+    public Color eyeColor = Color.white;
 
     // default values?
     public PlayerCharacterVisualData()

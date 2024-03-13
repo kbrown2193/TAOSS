@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public PlayerMovementMode playerMovementMode;
     [SerializeField] private PlayerPlatformerMovement playerPlatformerMovement;
 
+    [SerializeField] private PlayerVisualManager playerVisualManager;
+
+
     [SerializeField]private PerspectiveScaler perspectiveScaler;
 
     public bool isMovementEnabled = true;
@@ -14,8 +17,9 @@ public class Player : MonoBehaviour
     public float worldLevelSpeedMultiplier = 1f;
 
     public float worldLevelSizeScaler = 1; // be 1 for the most part..
-    // grid movement ... todo..
+    // grid movement ... todo...
 
+    #region Player Movement
     public void SetPlayerMovementMode(PlayerMovementMode newPlayerMovementMode)
     {
         playerMovementMode = newPlayerMovementMode;
@@ -62,6 +66,9 @@ public class Player : MonoBehaviour
         RefreshPlayerControllers();
     }
 
+    #endregion
+
+    #region Player Scaling
     public void SetPerspectiveScalerIsOn(bool value)
     {
         if (perspectiveScaler != null)
@@ -87,6 +94,22 @@ public class Player : MonoBehaviour
             Debug.LogWarning("Player does not have a perspective player...");
         }
     }
+
+    #endregion
+
+    #region Player Visuals
+    public void SetPlayerVisualsFromCharacterData(PlayerCharacterVisualData playerCharacterVisualData)
+    {
+        if(playerCharacterVisualData != null)
+        {
+            playerVisualManager.SetPlayerVisualsFromVisualData(playerCharacterVisualData);
+        }
+        else
+        {
+            Debug.LogError("Player.SetPlayerVisualsFromCharacterData() playerCharacterVisualData is null!!!");
+        }
+    }
+    #endregion
 }
 
 [System.Serializable]

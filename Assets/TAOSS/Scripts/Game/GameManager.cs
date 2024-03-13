@@ -205,6 +205,10 @@ public class GameManager : MonoBehaviour
                 GameManager.Instance.LoadGameData(gameData.gameName);
             }
 
+            Debug.Log("Setting player up...");
+            SetPlayerVisualDataFromGameData();
+            //SetPlayerVisualDataFromGameData(gameData);  // should both work?
+
             Debug.Log("Starting Game...");
             SetGameState(GameState.InGame);
         }
@@ -216,6 +220,40 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Player Management
+    // GETTING / SETTING
+    public void SetPlayer(Player newPlayer)
+    {
+        if (newPlayer != null)
+        {
+            if (newPlayer == player)
+            {
+                Debug.LogWarning("Warning Attempting to set same player object ");
+            }
+            else
+            {
+                Debug.Log("Setting new player from " + player.name + " to " + newPlayer.name);
+                player = newPlayer;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player = null");
+        }
+    }
+    public Player GetPlayer()
+    {
+        if (player == null)
+        {
+            Debug.LogWarning("Player is Null");
+            return null;
+        }
+        else
+        {
+            return player;
+        }
+    }
+
+    // MOVEMENT
     public void EnablePlayerMovment()
     {
         //player.is
@@ -263,35 +301,41 @@ public class GameManager : MonoBehaviour
         player.SetPlayerWorldLevelSpeedMultiplier(value);
     }
 
-    public void SetPlayer(Player newPlayer)
+    //VISUAL
+    /// <summary>
+    /// Defaults to using the currently saved dat
+    /// </summary>
+    public void SetPlayerVisualDataFromGameData()
     {
-        if (newPlayer != null)
+        Debug.Log("Setting PlayerVisualDataFromGameData...");
+        if(gameData != null)
         {
-            if (newPlayer == player)
-            {
-                Debug.LogWarning("Warning Attempting to set same player object ");
-            }
-            else
-            {
-                Debug.Log("Setting new player from " + player.name + " to " + newPlayer.name);
-                player = newPlayer;
-            }
+            Debug.Log(gameData.playerCharacterVisualData.hairSelection);
+            Debug.Log(gameData.playerCharacterVisualData.headSelection);
+            Debug.Log(gameData.playerCharacterVisualData.torsoSelection);
+            Debug.Log(gameData.playerCharacterVisualData.legsSelection);
+            Debug.Log(gameData.playerCharacterVisualData.feetSelection);
+            player.SetPlayerVisualsFromCharacterData(gameData.playerCharacterVisualData);
         }
         else
         {
-            Debug.LogWarning("Player = null");
+            Debug.LogError("Game Data is Null");
         }
     }
-    public Player GetPlayer()
+    /// <summary>
+    /// Can pass in a new game data
+    /// </summary>
+    /// <param name="newGameData"></param>
+    public void SetPlayerVisualDataFromGameData(GameData newGameData)
     {
-        if (player == null)
+        Debug.Log("Setting PlayerVisualDataFromGameData...");
+        if (newGameData != null)
         {
-            Debug.LogWarning("Player is Null");
-            return null;
+            player.SetPlayerVisualsFromCharacterData(newGameData.playerCharacterVisualData);
         }
         else
         {
-            return player;
+            Debug.LogError("Game Data is Null");
         }
     }
     #endregion

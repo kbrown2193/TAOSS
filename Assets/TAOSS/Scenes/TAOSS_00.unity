@@ -21948,17 +21948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3f3ef3b26dc234e8980a7047ba7247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1357168817 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3561135489083054508, guid: a78e9bfce7baed14e977f84b9912fb56, type: 3}
-  m_PrefabInstance: {fileID: 6830061502989683006}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd1f65eb2289fd4887fba4ec8a27205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1366500487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49076,10 +49065,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1562745358}
-    - target: {fileID: 259688788994960992, guid: a78e9bfce7baed14e977f84b9912fb56, type: 3}
-      propertyPath: customLevelLoading
-      value: 
-      objectReference: {fileID: 1357168817}
     - target: {fileID: 3038763820119501032, guid: a78e9bfce7baed14e977f84b9912fb56, type: 3}
       propertyPath: m_Name
       value: GameManger

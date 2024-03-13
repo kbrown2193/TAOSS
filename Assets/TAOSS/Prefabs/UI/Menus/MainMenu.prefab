@@ -19066,6 +19066,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CreateCharacterButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayTimeline
       objectReference: {fileID: 0}
