@@ -237,3 +237,57 @@ MonoBehaviour:
     worldLevelMovementSpeedMultiplier: 1
     songKey: Artifacts_A_01
     additionalSongKeys: []
+  - worldLevelKey: BronzeBlock
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/BronzeBlock
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+    songKey: BronzeCity_Theme
+    additionalSongKeys: []
+  - worldLevelKey: IronCity
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/IronCity
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+    songKey: IronCity_Theme
+    additionalSongKeys: []
+  - worldLevelKey: OutsideTheBox
+    isUnlocked: 1
+    worldLevelSceneName: TAOSS_00
+    worldLevelHierarchyName: GameWorld_C0_L00/OutsideTheBox
+    worldLevlGrids:
+    - {fileID: 0}
+    worldLevelTilemaps:
+    - {fileID: 0}
+    playerSpawnPosition: {x: 0, y: -4, z: 0}
+    playerSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSpawnPosition: {x: 0, y: 0, z: 0}
+    cameraSpawnDirection: {x: 0, y: 0, z: 0}
+    cameraSize: {x: 9, y: 6}
+    playerCellSpawnPosition: {x: 0, y: 0, z: 0}
+    worldLevelSizeMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1
+    songKey: OutsideTheBox_Theme
+    additionalSongKeys: []

@@ -153,3 +153,24 @@ MonoBehaviour:
     album: KB_XX
     description: A soft sounding slow harp.
     associatedWorldLevelKeys: []
+  - songKey: BronzeCity_Theme
+    audioClip: {fileID: 8300000, guid: 378b5bbab3f566043a9a6278c0b266ec, type: 3}
+    title: Bronze City Theme
+    artist: Kyle Brown
+    album: KB_XX
+    description: 
+    associatedWorldLevelKeys: []
+  - songKey: IronCity_Theme
+    audioClip: {fileID: 8300000, guid: e75cf982f8c31f24091e0e24124f1a50, type: 3}
+    title: Iron City Theme
+    artist: Kyle Brown
+    album: KB_XX
+    description: 
+    associatedWorldLevelKeys: []
+  - songKey: OutsideTheBox_Theme
+    audioClip: {fileID: 8300000, guid: efdc8b7e468b46e488b152baf37b738e, type: 3}
+    title: OutsideTheBox Theme
+    artist: Kyle Brown
+    album: KB_XX
+    description: 
+    associatedWorldLevelKeys: []

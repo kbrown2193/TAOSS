@@ -93,6 +93,18 @@ MonoBehaviour:
     dialogType: 0
     dialogText: '?: ?'
     dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L02_S00_01
+  - dialogKey: L02_S00_01
+    dialogType: 0
+    dialogText: 'Bird: Rise.'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L02_S00_02
+  - dialogKey: L02_S00_02
+    dialogType: 0
+    dialogText: 'Bird: Rise Above.'
+    dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
   - dialogKey: L02_S01_00
@@ -104,6 +116,18 @@ MonoBehaviour:
   - dialogKey: L03_S00_00
     dialogType: 0
     dialogText: '?: ??'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L03_S00_01
+  - dialogKey: L03_S00_01
+    dialogType: 0
+    dialogText: 'Beast: Fight.'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L03_S00_02
+  - dialogKey: L03_S00_02
+    dialogType: 0
+    dialogText: 'Beast: Fight with all your might. '
     dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
@@ -119,6 +143,24 @@ MonoBehaviour:
     dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
+  - dialogKey: L04_S00_01
+    dialogType: 0
+    dialogText: 'Star: Shine.'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L04_S00_02
+  - dialogKey: L04_S00_02
+    dialogType: 0
+    dialogText: 'Star: Shine your light'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L04_S00_03
+  - dialogKey: L04_S00_03
+    dialogType: 0
+    dialogText: 'Star: In the Dark of Night.'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
   - dialogKey: L04_S01_00
     dialogType: 0
     dialogText: "Star: This is\u2026 the way of the star. "
@@ -128,6 +170,18 @@ MonoBehaviour:
   - dialogKey: L05_S00_00
     dialogType: 0
     dialogText: '?: ????'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L05_S00_01
+  - dialogKey: L05_S00_01
+    dialogType: 0
+    dialogText: 'Moon: Ebb.'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L05_S00_02
+  - dialogKey: L05_S00_02
+    dialogType: 0
+    dialogText: 'Moon: Ebb and Flow.'
     dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
@@ -201,5 +255,47 @@ MonoBehaviour:
     dialogType: 0
     dialogText: '?: Like the first, book of thought. '
     dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L08_S00_00
+    dialogType: 0
+    dialogText: '?: Finally out of the box.'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L08_S00_01
+    dialogType: 0
+    dialogText: '?: Mind the gap.'
+    dialogResponses: []
     isDialogChain: 1
-    nextDialogKey: L07_S01_04
+    nextDialogKey: L08_S00_02
+  - dialogKey: L08_S00_02
+    dialogType: 0
+    dialogText: '?: Mind the g a p.'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L08_S00_03
+    dialogType: 0
+    dialogText: '?: Better head down south. '
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L08_S00_04
+    dialogType: 0
+    dialogText: '?: So this is Bronze Block.'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L08_S00_05
+    dialogType: 0
+    dialogText: '?: So this is Iron City'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L08_S00_06
+    dialogType: 0
+    dialogText: '?: Am I finally out of the box?'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 

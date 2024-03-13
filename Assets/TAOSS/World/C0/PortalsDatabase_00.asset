@@ -144,7 +144,7 @@ MonoBehaviour:
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
   - portalKey: BronzeBlock_To_IronCity
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: IronCity
     portalLevel: BronzeBlock
     destinationLevel: IronCity
@@ -153,11 +153,41 @@ MonoBehaviour:
     destinationPosition: {x: 0, y: 0, z: 0}
     destinationDirection: {x: 0, y: 0, z: 0}
     destinationCameraSize: {x: 9, y: 6}
+  - portalKey: BronzeBlock_To_SycamoreStreet
+    isUnlocked: 1
+    destinationKey: SycamoreStreet
+    portalLevel: BronzeBlock
+    destinationLevel: SycamoreStreet
+    portalPosition: {x: 0, y: 0, z: 0}
+    portalDirection: {x: 0, y: 0, z: 0}
+    destinationPosition: {x: 0, y: 0, z: 0}
+    destinationDirection: {x: 0, y: 0, z: 0}
+    destinationCameraSize: {x: 9, y: 6}
   - portalKey: IronCity_To_OutsideTheBox
-    isUnlocked: 0
+    isUnlocked: 1
     destinationKey: OutsideTheBox
     portalLevel: IronCity
     destinationLevel: OutsideTheBox
+    portalPosition: {x: 0, y: 0, z: 0}
+    portalDirection: {x: 0, y: 0, z: 0}
+    destinationPosition: {x: 0, y: 0, z: 0}
+    destinationDirection: {x: 0, y: 0, z: 0}
+    destinationCameraSize: {x: 9, y: 6}
+  - portalKey: IronCity_To_BronzeBlock
+    isUnlocked: 1
+    destinationKey: BronzeBlock
+    portalLevel: IronCity
+    destinationLevel: BronzeBlock
+    portalPosition: {x: 0, y: 0, z: 0}
+    portalDirection: {x: 0, y: 0, z: 0}
+    destinationPosition: {x: 0, y: 0, z: 0}
+    destinationDirection: {x: 0, y: 0, z: 0}
+    destinationCameraSize: {x: 9, y: 6}
+  - portalKey: OutsideTheBox_To_IronCity
+    isUnlocked: 1
+    destinationKey: IronCity
+    portalLevel: OutsideTheBox
+    destinationLevel: IronCity
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
     destinationPosition: {x: 0, y: 0, z: 0}
@@ -267,16 +297,6 @@ MonoBehaviour:
     isUnlocked: 1
     destinationKey: GoldenBoxGatewayReturnToCenter
     portalLevel: GoldenBox_Gateway
-    destinationLevel: GoldenBox_Center
-    portalPosition: {x: 0, y: 0, z: 0}
-    portalDirection: {x: 0, y: 0, z: 0}
-    destinationPosition: {x: 0, y: 0, z: 0}
-    destinationDirection: {x: 0, y: 0, z: 0}
-    destinationCameraSize: {x: 9, y: 6}
-  - portalKey: GoldenBox_Artifacts_End_To_GoldenBox_Center
-    isUnlocked: 1
-    destinationKey: GoldenBoxArtifactsReturnToCenter
-    portalLevel: GoldenBox_Artifacts
     destinationLevel: GoldenBox_Center
     portalPosition: {x: 0, y: 0, z: 0}
     portalDirection: {x: 0, y: 0, z: 0}
