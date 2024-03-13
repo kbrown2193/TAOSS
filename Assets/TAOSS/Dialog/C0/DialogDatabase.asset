@@ -89,3 +89,117 @@ MonoBehaviour:
     dialogResponses: []
     isDialogChain: 0
     nextDialogKey: 
+  - dialogKey: L02_S00_00
+    dialogType: 0
+    dialogText: '?: ?'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L02_S01_00
+    dialogType: 0
+    dialogText: "Bird: This is\u2026 the way of the bird."
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L03_S00_00
+    dialogType: 0
+    dialogText: '?: ??'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L03_S01_00
+    dialogType: 0
+    dialogText: "Beast: This is\u2026 the way of the beast."
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L04_S00_00
+    dialogType: 0
+    dialogText: '?: ???'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L04_S01_00
+    dialogType: 0
+    dialogText: "Star: This is\u2026 the way of the star. "
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L05_S00_00
+    dialogType: 0
+    dialogText: '?: ????'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L05_S01_00
+    dialogType: 0
+    dialogText: "Moon: This is\u2026 the way of the moon."
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L06_S00_00
+    dialogType: 0
+    dialogText: '?: That''s the last seal.  The way is open.'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L07_S00_00
+    dialogType: 0
+    dialogText: '?: ?'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S00_01
+  - dialogKey: L07_S00_01
+    dialogType: 0
+    dialogText: '?: ??'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S00_02
+  - dialogKey: L07_S00_02
+    dialogType: 0
+    dialogText: '?: ???'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S00_03
+  - dialogKey: L07_S00_03
+    dialogType: 0
+    dialogText: '?: ????'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S00_04
+  - dialogKey: L07_S00_04
+    dialogType: 0
+    dialogText: '?: ? ?? ??? ????'
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L07_S01_00
+    dialogType: 0
+    dialogText: '?: Long you came, hard you fought '
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S01_01
+  - dialogKey: L07_S01_01
+    dialogType: 0
+    dialogText: '?: Hope you got, what you sought.  '
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S01_02
+  - dialogKey: L07_S01_02
+    dialogType: 0
+    dialogText: '?: Some things can''t, can''t be bought.'
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S01_03
+  - dialogKey: L07_S01_03
+    dialogType: 0
+    dialogText: '?: Like the first, book of thought. '
+    dialogResponses: []
+    isDialogChain: 0
+    nextDialogKey: 
+  - dialogKey: L07_S01_03
+    dialogType: 0
+    dialogText: '?: Like the first, book of thought. '
+    dialogResponses: []
+    isDialogChain: 1
+    nextDialogKey: L07_S01_04
