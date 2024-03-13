@@ -96,9 +96,12 @@ public class LoadGameMenu : MonoBehaviour
             // Load the selected game save
             Debug.Log("Loading game save: " + currentSelectedGameSave);
             GameData gameData = GameFileHandler.Instance.LoadSave(currentSelectedGameSave); 
+
             Debug.Log("TODO: load to currrent checkpoint");
             if (gameData != null)
             {
+                GameManager.Instance.SetReferenceGameData(gameData);
+
                 // game data exists, so checpoint check...
                 if (gameData.lastCheckpoint == 0)
                 {
@@ -112,6 +115,7 @@ public class LoadGameMenu : MonoBehaviour
                     Debug.Log("TODO Implement where to load for this checkpoint" + gameData.lastCheckpoint.ToString());
                     CinematicsManager.Instance.PlayCinematic("TAOSS_C0_L00_00_Intro"); // CHANGE THIS?
                     mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut); // set main menu fade out page
+                    GameManager.Instance.LoadGameData(gameData.gameName);
                 }
             }
             else

@@ -52,9 +52,25 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Saved time at " + Time.time);
         Debug.Log("Game Saved Location " + GameFileHandler.Instance.GetGameSaveFilePath(gameData.gameName));
     }
+    public void LoadSave(string gameName)
+    {
+        //LoadGameData(gameName);
+        Debug.LogWarning("Unused???"); // using loadgamedata ?
+    }
     public void LoadGameData(string gameName)
     {
-        gameData = GameFileHandler.Instance.LoadSave(gameName);
+        Debug.LogWarning("Game Loaded Location " + GameFileHandler.Instance.GetGameSaveFilePath(gameData.gameName));
+        Debug.LogWarning("Game Load time Begin at: " + Time.time);
+        GameData tmpGameData = GameFileHandler.Instance.LoadSave(gameName);
+        if (tmpGameData != null)
+        {
+            gameData = tmpGameData;
+        }
+        else
+        {
+            Debug.LogError("tmp Game Data is Null");
+        }
+        Debug.LogWarning("Game Load time End at " + Time.time);
     }
     public GameData GetGameData()
     {

@@ -18,16 +18,53 @@ public class GatewaySeal : MonoBehaviour
     [SerializeField] private Sprite doorSpriteUnlocked; // set door to this if unlocked
 
     /*
-     * */
+     * 
+     *
     private void Start()
     {
         lockDatas = new LockData[4]; // default creation...  did not fix..
         // could load...
         Debug.LogWarning("Setting Lock Datas from game data"); // maybe do more sercure checks...
         lockDatas = GameManager.Instance.gameData.gatewaylockDatas;
+        // refresh
+        RefreshAllSprites();
+    }
+     * */
+    private void Awake()
+    {
+        //lockDatas = new LockData[4]; // default creation...  did not fix..
+        // could load...
+        Debug.LogWarning("Setting Lock Datas from game data"); // maybe do more sercure checks...
+        if (lockDatas != null)
+        {
+            Debug.LogWarning("OnAwake.LockDatas.length = " + lockDatas.Length);
+            Debug.Log("OnAwake.LockDatas = " + lockDatas);
+        }
+        else
+        {
+            Debug.LogWarning("OnAwake.LockDatas = " + null);
+
+        }
+        LoadLockData();
+        // = GameManager.Instance.gameData.gatewaylockDatas;
+        // refresh
+        RefreshIsLockedFromLockedDatas();
+        RefreshAllSprites();
+        //DebugPrint();
+
+        if (lockDatas != null)
+        {
+            Debug.LogWarning("EndAwake.LockDatas.length = " + lockDatas.Length);
+            Debug.Log("EndAwake.LockDatas = " + lockDatas);
+        }
+        else
+        {
+            Debug.LogWarning("EndAwake.LockDatas = " + null);
+
+        }
     }
 
-    private void Update()
+        private void Update()
     {
         // testing Locks
         if(Input.GetKeyDown(KeyCode.L))
@@ -112,9 +149,19 @@ public class GatewaySeal : MonoBehaviour
     public void DebugPrint()
     {
         Debug.Log("Gateway seal is unlocked = " + isUnlocked);
+
         for(int i = 0 ; i < locksIsLocked.Length; i++)
         {
             Debug.Log("Lock[" + i + "] = " + locksIsLocked[i]);
+        }
+
+        for(int i = 0 ; i < lockDatas.Length; i++)
+        {
+            Debug.Log("lockDatas[" + i + "] = " + lockDatas[i].ToString());
+        }
+        for (int i = 0; i < lockDatas.Length; i++)
+        {
+            Debug.Log("lockDatas[" + i + "] isLocked = " + lockDatas[i].isLocked);
         }
     }
     #endregion
@@ -123,8 +170,18 @@ public class GatewaySeal : MonoBehaviour
     public void LoadLockData()
     {
         //GameManager.Instance.LoadGameData();
-        Debug.Log("Loading Lock Datas...");
-        lockDatas = GameManager.Instance.gameData.gatewaylockDatas;
+        Debug.LogWarning("Loading Lock Datas...");
+        if(GameManager.Instance.gameData.gatewaylockDatas != null)
+        {
+            Debug.Log("LoadLock Data gatewaylockDatas.length = " + GameManager.Instance.gameData.gatewaylockDatas.Length);
+            lockDatas = GameManager.Instance.gameData.gatewaylockDatas;
+
+        }
+        else
+        {
+            Debug.LogError("LoadLock Data gatewaylockDatas = null");
+        }
+        DebugPrint();
     }
     public void SaveLockDatas()
     {
@@ -151,9 +208,24 @@ public class GatewaySeal : MonoBehaviour
         // something like 
         //LockData[] returnsALockDataArray = GameManager.LoadGatewayLocksDatas()
     }
+    public void RefreshIsLockedFromLockedDatas()
+    {
+
+        for (int i = 0; i < locksIsLocked.Length; i++)
+        {
+            Debug.Log("Lock[" + i + "] = " + locksIsLocked[i]);
+            SetLockIsLocked(i, lockDatas[i].isLocked);
+        }
+    }
     #endregion
 
     #region Sprites
+    public void RefreshAllSprites()
+    {
+        Debug.LogWarning("Refreshing All Sprites");
+        SetLocksSpritesBasedOnState();
+        SetDoorSpriteBasedOnState();
+    }
     public void SetDoorSpriteBasedOnState()
     {
         if(isUnlocked)
