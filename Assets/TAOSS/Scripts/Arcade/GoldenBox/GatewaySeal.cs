@@ -34,10 +34,10 @@ public class GatewaySeal : MonoBehaviour
     {
         //lockDatas = new LockData[4]; // default creation...  did not fix..
         // could load...
-        Debug.LogWarning("Setting Lock Datas from game data"); // maybe do more sercure checks...
+        Debug.Log("Setting Lock Datas from game data"); // maybe do more sercure checks...
         if (lockDatas != null)
         {
-            Debug.LogWarning("OnAwake.LockDatas.length = " + lockDatas.Length);
+            Debug.Log("OnAwake.LockDatas.length = " + lockDatas.Length);
             Debug.Log("OnAwake.LockDatas = " + lockDatas);
         }
         else
@@ -64,8 +64,9 @@ public class GatewaySeal : MonoBehaviour
         }
     }
 
-        private void Update()
+    private void Update()
     {
+        /*
         // testing Locks
         if(Input.GetKeyDown(KeyCode.L))
         {
@@ -87,9 +88,8 @@ public class GatewaySeal : MonoBehaviour
                 SaveLockDatas();
             }
         }
+        */
     }
-    /*
-     */ 
 
     #region Locks
     // 3 different gets...
@@ -113,7 +113,6 @@ public class GatewaySeal : MonoBehaviour
         lockDatas[index].isLocked = value;
     }
 
-
     public void SetLockIsLocked(int index, bool value)
     {
         Debug.Log("Setting Lock is Locked[" + index + "] to " + value);
@@ -131,21 +130,19 @@ public class GatewaySeal : MonoBehaviour
         SetDoorSpriteBasedOnState();
         DebugPrint();
     }
-
     public bool GetLockIsLocked(int index)
     {
         Debug.Log("Getting Lock is Locked" + index + "] = " + locksIsLocked[index]);
         return locksIsLocked[index];
     }
-
     public bool CheckIfGatewayIsUnlocked()
     {
-        isUnlocked = !(locksIsLocked[0] && locksIsLocked[1] && locksIsLocked[2] && locksIsLocked[3]); // is unlocked is only true if all locks are unlocked
-        //Debug.Log("Gateway seal is unlocked = " + isUnlocked);
-        DebugPrint();
+        //Debug.Log("Check if Gateway is unlocked Prior = " + isUnlocked);
+        isUnlocked = !locksIsLocked[0] && !locksIsLocked[1] && !locksIsLocked[2] && !locksIsLocked[3];
+        //Debug.Log("Check if Gateway is unlocked After = " + isUnlocked);
+        //DebugPrint();
         return isUnlocked;
     }
-
     public void DebugPrint()
     {
         Debug.Log("Gateway seal is unlocked = " + isUnlocked);
@@ -170,7 +167,7 @@ public class GatewaySeal : MonoBehaviour
     public void LoadLockData()
     {
         //GameManager.Instance.LoadGameData();
-        Debug.LogWarning("Loading Lock Datas...");
+        Debug.Log("Loading Lock Datas...");
         if(GameManager.Instance.gameData.gatewaylockDatas != null)
         {
             Debug.Log("LoadLock Data gatewaylockDatas.length = " + GameManager.Instance.gameData.gatewaylockDatas.Length);
@@ -201,10 +198,14 @@ public class GatewaySeal : MonoBehaviour
         GameManager.Instance.SaveGatewayLockDatas(lockDatas);
 
     }
-    // TODO: LOAD DATA
+
+    /// <summary>
+    /// No references?
+    /// </summary>
     public void LoadLockDatas()
     {
         Debug.Log("TODO: Load Lock Data");
+        Debug.Log("Is this handled in the GoldenBoxGameFlowManager????: Load Lock Data");
         // something like 
         //LockData[] returnsALockDataArray = GameManager.LoadGatewayLocksDatas()
     }
@@ -237,7 +238,6 @@ public class GatewaySeal : MonoBehaviour
             doorSpriteRenderer.sprite = doorSpriteLocked;
         }
     }
-
     public void SetLockSpriteBasedOnState(int lockIndex)
     {
         if (locksIsLocked[lockIndex])
@@ -266,7 +266,7 @@ public class LockData
     public string lockKey; // not the key to open the door, but the key as in a dictionary...
     public bool isLocked;
     public int lockIndex; // index in an array
-    //public string Description;
+
     // Default creating 1
     public LockData()
     {
