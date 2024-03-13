@@ -17,6 +17,8 @@ public class GatewaySeal : MonoBehaviour
     [SerializeField] private Sprite doorSpriteLocked; // set door to this if locked
     [SerializeField] private Sprite doorSpriteUnlocked; // set door to this if unlocked
 
+    [SerializeField] private Portal gatewayPortal;
+
     /*
      * 
      *
@@ -128,8 +130,10 @@ public class GatewaySeal : MonoBehaviour
         SetLockSpriteBasedOnState(index);
         CheckIfGatewayIsUnlocked();
         SetDoorSpriteBasedOnState();
+        RefreshPortalOnCurrentState();
         DebugPrint();
     }
+
     public bool GetLockIsLocked(int index)
     {
         Debug.Log("Getting Lock is Locked" + index + "] = " + locksIsLocked[index]);
@@ -143,6 +147,7 @@ public class GatewaySeal : MonoBehaviour
         //DebugPrint();
         return isUnlocked;
     }
+
     public void DebugPrint()
     {
         Debug.Log("Gateway seal is unlocked = " + isUnlocked);
@@ -255,6 +260,20 @@ public class GatewaySeal : MonoBehaviour
         for(int i = 0; i < lockSpriteRenderers.Length; i++)
         {
             SetLockSpriteBasedOnState(i);
+        }
+    }
+    #endregion
+
+    #region Portals
+    public void RefreshPortalOnCurrentState()
+    {
+        if(isUnlocked)
+        {
+            gatewayPortal.SetIsTriggerEnabledTrue();
+        }
+        else
+        {
+            gatewayPortal.SetIsTriggerEnabledFalse();
         }
     }
     #endregion

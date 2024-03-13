@@ -26,6 +26,11 @@ public class DialogDatabase : ScriptableObject
     // Function to retrieve a MusicData based on songKey
     public DialogData GetDialogData(string dialogKey)
     {
+        if(dialogKey == null)
+        {
+            Debug.LogError("dialog key is nulll");
+            return null;
+        }
         if (dialogDataLookupTable.ContainsKey(dialogKey))
         {
             Debug.Log("Dialog.DB.Looking up song key = " + dialogKey);

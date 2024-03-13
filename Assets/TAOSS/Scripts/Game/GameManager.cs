@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameState gameState = GameState.Preload;
 
+    // RESTRUCTURE THIS LATER
+    [SerializeField] private Portal outsidePortal;
+
     //[SerializeField] public CustomLevelLoadingTAOSS customLevelLoading; // implement way to easily get world level info...
     private bool isPaused = false;
 
@@ -342,9 +345,28 @@ public class GameManager : MonoBehaviour
 
     #region Game Management
 
+    /// <summary>
+    ///  make more robust but for now only considering this case...
+    /// </summary>
+    public void CompleteLevel(int levelIndex)
+    {
+        if (levelIndex == 5)
+        {
+            Debug.Log("Completed Artifacts");
+            outsidePortal.SetIsTriggerEnabledTrue();
+        }
+        else
+        {
+            Debug.Log("Conompleted " + levelIndex);
+        }
+    }
+
     public void ExitToMainMenu()
     {
         Debug.Log("Exiting to Main Menu");
+        // Save?
+        Debug.Log("TODO: SAVE DATA");
+
         UIManager.Instance.GetPauseMenu().Hide();
 
 
