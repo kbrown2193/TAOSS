@@ -99,6 +99,8 @@ public class TAOSSPreloader : MonoBehaviour
 
     public IEnumerator TransitionToMainMenu()
     {
+        GameManager.Instance.SetGameState(GameState.MainMenu);
+
         yield return new WaitForSeconds(2); // initial wait for now... before destroying this
 
         Destroy(this.gameObject); // delete the preloader for now?

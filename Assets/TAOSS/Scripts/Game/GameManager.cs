@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public Player player; // handle the player
 
+    [SerializeField] private GameState gameState = GameState.Preload;
+
     //[SerializeField] public CustomLevelLoadingTAOSS customLevelLoading; // implement way to easily get world level info...
+    private bool isPaused = false;
 
     #region Singleton
     private static GameManager instance;
@@ -174,6 +177,7 @@ public class GameManager : MonoBehaviour
         }
         //if(gameData != )
     }
+
     public void LoadGameInit(string gameName)
     {
         // Load the selected game save
@@ -200,6 +204,9 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.GetMainMenu().SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut); // set main menu fade out page
                 GameManager.Instance.LoadGameData(gameData.gameName);
             }
+
+            Debug.Log("Starting Game...");
+            SetGameState(GameState.InGame);
         }
         else
         {
@@ -288,4 +295,82 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+
+    #region Game Management
+
+    public void ExitToMainMenu()
+    {
+        Debug.Log("Exiting to Main Menu");
+        UIManager.Instance.GetPauseMenu().Hide();
+
+
+        UIManager.Instance.GetMainMenu().SetMainMenuPage(MainMenu.MainMenuPage.TitleMenu);
+        UIManager.Instance.GetMainMenu().Show();
+
+        AudioManager.Instance.StopPlayingMusic();
+
+        // Player
+        player.SetIsMovemenEnabled(false);
+        Debug.Log("TODO: other exit to main menu functionalityMain Menu");
+
+        // Other player interaction control... TODO:
+
+        SetGameState(GameState.MainMenu);
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("Exiting Game");
+#if UNITY_EDITOR
+        // In the Unity Editor, stop playing the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // In a built application, quit the application
+        Application.Quit();
+#endif
+    }
+
+    public void PauseGame()
+    {
+        isPaused = true;
+        gameState = GameState.Paused;
+        UIManager.Instance.GetPauseMenu().Show();
+    }
+    public void UnPauseGame()
+    {
+        isPaused = false;
+        gameState = GameState.InGame;
+        UIManager.Instance.GetPauseMenu().Hide();
+    }
+
+    public GameState GameState
+    {
+        get { return gameState; }
+    }
+    public void SetGameState(GameState newGmeState)
+    {
+        gameState = newGmeState;
+    }
+    public void SetGameState(int newGmeState)
+    {
+        if(newGmeState >= 0 && newGmeState <= (int)GameState.Paused)
+        {
+            Debug.Log("ValidGameState... Setting");
+            gameState = (GameState)newGmeState;
+        }
+        else
+        {
+            Debug.LogWarning("Invalid GameState given");
+        }
+    }
+    #endregion
+}
+
+[System.Serializable]
+public enum GameState
+{
+    Preload,
+    MainMenu,
+    InGame,
+    Paused, // In Game, but paused
 }

@@ -525,6 +525,17 @@
                     "action": "Menus",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff8a00fe-c7b5-4004-b415-7df1f5e3fac2",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

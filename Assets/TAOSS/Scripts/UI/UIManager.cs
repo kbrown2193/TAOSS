@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private MainMenu mainMenu;
+    [SerializeField] private PauseMenu pauseMenu;
 
     #region Singleton
     private static UIManager instance;
@@ -47,11 +48,24 @@ public class UIManager : MonoBehaviour
         {
             Debug.LogError("Did Not Find main memnu");
         }
+        if (pauseMenu == null)
+        {
+            Debug.Log("Attempting find pasue menu on child");
+            pauseMenu = (PauseMenu)gameObject.GetComponentInChildren(typeof(PauseMenu));
+        }
+        if (pauseMenu == null)
+        {
+            Debug.LogError("Did Not Find pause memnu");
+        }
     }
     #endregion
 
     public MainMenu GetMainMenu()
     {
         return mainMenu;
+    }
+    public PauseMenu GetPauseMenu()
+    {
+        return pauseMenu;
     }
 }

@@ -161,6 +161,14 @@ public class AudioManager : MonoBehaviour
         // PlayMusic(worldLevelData.songKey);
     }
 
+    public void StopPlayingMusic()
+    {
+        if (musicAudioSources[currentMusicChannel].isPlaying)
+        {
+            musicAudioSources[currentMusicChannel].Stop();
+        }
+    }
+
     public AudioClip GetMusicAudioClip(string songKey)
     {
         return musicDatabase.GetAudioClipFromSongKey(songKey);

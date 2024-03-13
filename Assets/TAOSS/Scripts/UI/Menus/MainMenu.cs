@@ -52,8 +52,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    // Implementing UIElement interface methods
-
+    // Implementing UIElement Visibility
     public void Show()
     {
         gameObject.SetActive(true);
