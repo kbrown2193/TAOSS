@@ -55298,7 +55298,7 @@ PrefabInstance:
     - target: {fileID: 3520452562208948787, guid: 00544638969b7954480cf344c90b4ff3, type: 3}
       propertyPath: prefabToSpawn
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1448035352}
     - target: {fileID: 3520452562208948787, guid: 00544638969b7954480cf344c90b4ff3, type: 3}
       propertyPath: rigidBody2DSpawnDatas.Array.size
       value: 13
@@ -71600,6 +71600,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldLevelKey: GoldenBox_Bird
+--- !u!1 &1448035352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9173960948362813596, guid: 00544638969b7954480cf344c90b4ff3, type: 3}
+  m_PrefabInstance: {fileID: 536264233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1448539004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130600,6 +130605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1925250066}
     m_Modifications:
+    - target: {fileID: 549431460609391527, guid: 9c3a38c1e0d4d404fba8b7d42cfb3875, type: 3}
+      propertyPath: m_text
+      value: v 0.0.1.0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 913335243077415685, guid: 9c3a38c1e0d4d404fba8b7d42cfb3875, type: 3}
       propertyPath: m_Name
       value: Verision_Number_Text
