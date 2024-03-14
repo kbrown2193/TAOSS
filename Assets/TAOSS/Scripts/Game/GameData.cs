@@ -11,6 +11,8 @@ public class GameData
 
     public PlayerCharacterVisualData playerCharacterVisualData; // save the character info
 
+    public PlayerStats playerStats;
+
     // Campaign Data
     public LifetimeCampaignData lifetimeCampaignData;
     public CampaignData campaignData;

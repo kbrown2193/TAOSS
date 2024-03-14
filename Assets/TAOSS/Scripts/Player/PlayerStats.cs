@@ -8,6 +8,7 @@ public class PlayerStats
     public string playerName;  // the character name created...
 
     // Player experience progression stats
+    public int score; // an integer for the player score
     public int level;
     public int experience; // if max int? Use overflow
     public int experienceOverflow;

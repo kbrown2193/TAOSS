@@ -341,6 +341,12 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Game Data is Null");
         }
     }
+
+    // STATS
+    public void AddPlayerScore(int amount)
+    {
+        player.AddScore(amount);
+    }
     #endregion
 
     #region Game Management

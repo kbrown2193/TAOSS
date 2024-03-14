@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 610384389465252738}
   - component: {fileID: 8530314714305263995}
   - component: {fileID: 8051504189868608771}
+  - component: {fileID: 4901922371488242928}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -143,6 +144,36 @@ MonoBehaviour:
   playerPlatformerMovement: {fileID: 6144559484791043872}
   playerVisualManager: {fileID: 8051504189868608771}
   perspectiveScaler: {fileID: 8425746751872531593}
+  playerStats:
+    playerName: 
+    score: 0
+    level: 0
+    experience: 0
+    experienceOverflow: 0
+    secondsPlayed: 0
+    fractionalMilliseconds: 0
+    timeOverflow: 0
+    credits: 0
+    creditsStack: 0
+    creditsStackOverflow: 0
+    movementSpeed: 0
+    healthMax: 0
+    healthCurrent: 0
+    adaptability: 0
+    agility: 0
+    charisma: 0
+    creativity: 0
+    endurance: 0
+    hearing: 0
+    integrity: 0
+    knowledge: 0
+    smell: 0
+    strategy: 0
+    strength: 0
+    vision: 0
+    willpower: 0
+    wisdowm: 0
+    unlockedPotential: 0
   isMovementEnabled: 1
   worldLevelSpeedMultiplier: 1
   worldLevelSizeScaler: 1
@@ -388,6 +419,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2a784a27be7429c499ee62232a801ca8, type: 3}
   - {fileID: 21300000, guid: 2a784a27be7429c499ee62232a801ca8, type: 3}
   - {fileID: 21300000, guid: 2a784a27be7429c499ee62232a801ca8, type: 3}
+--- !u!114 &4901922371488242928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625794066423876340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510f868a09d112448b9581f4fe7f44a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
 --- !u!1 &2618573036561077672
 GameObject:
   m_ObjectHideFlags: 0

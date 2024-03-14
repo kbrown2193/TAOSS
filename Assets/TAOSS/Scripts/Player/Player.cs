@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Movement
     public PlayerMovementMode playerMovementMode;
     [SerializeField] private PlayerPlatformerMovement playerPlatformerMovement;
 
+    // Visual
     [SerializeField] private PlayerVisualManager playerVisualManager;
 
-
+    // Visual - Graphics
     [SerializeField]private PerspectiveScaler perspectiveScaler;
 
+    // stats
+    [SerializeField] private PlayerStats playerStats;
+
+    // Movement
     public bool isMovementEnabled = true;
 
     public float worldLevelSpeedMultiplier = 1f;
 
+    // Sizing
     public float worldLevelSizeScaler = 1; // be 1 for the most part..
     // grid movement ... todo...
 
@@ -107,6 +114,38 @@ public class Player : MonoBehaviour
         else
         {
             Debug.LogError("Player.SetPlayerVisualsFromCharacterData() playerCharacterVisualData is null!!!");
+        }
+    }
+    #endregion
+
+    #region Player Stats
+    public void SavePlayerStats()
+    {
+        
+    }
+    public void AddScore(int amount)
+    {
+        Debug.Log("Adding score to player stats");
+        if(playerStats.score + amount < int.MaxValue)
+        {
+            playerStats.score += amount;
+            RefreshScoreVisuals();
+        }
+        else
+        {
+            Debug.LogWarning("At Max int for score");
+        }
+    }
+
+    public void RefreshScoreVisuals()
+    {
+        if(playerStats != null)
+        {
+            UIManager.Instance.GetPlayerScoreVisualManager().RefreshScoreText(playerStats.score);
+        }
+        else
+        {
+            Debug.LogError("Player Stats is null");
         }
     }
     #endregion

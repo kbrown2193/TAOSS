@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private MainMenu mainMenu;
     [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private PlayerScoreVisualManager playerScoreVisualManager;
 
     #region Singleton
     private static UIManager instance;
@@ -67,5 +68,9 @@ public class UIManager : MonoBehaviour
     public PauseMenu GetPauseMenu()
     {
         return pauseMenu;
+    }
+    public PlayerScoreVisualManager GetPlayerScoreVisualManager()
+    {
+        return playerScoreVisualManager;
     }
 }
