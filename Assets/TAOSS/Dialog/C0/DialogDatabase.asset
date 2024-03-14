@@ -44,10 +44,9 @@ MonoBehaviour:
     nextDialogKey: 
   - dialogKey: L00_S00_04
     dialogType: 2
-    dialogText: 2 Response Test
+    dialogText: This isn't the arcade
     dialogResponses:
-    - Test Response 0
-    - Test Response 1
+    - ...
     isDialogChain: 0
     nextDialogKey: 
   - dialogKey: L00_S00_05
