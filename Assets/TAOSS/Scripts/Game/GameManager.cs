@@ -210,6 +210,8 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("Setting player up...");
             SetPlayerVisualDataFromGameData();
+            // always heal to 100
+            HealPlayer(100);
             //SetPlayerVisualDataFromGameData(gameData);  // should both work?
 
             Debug.Log("Starting Game...");
@@ -346,6 +348,14 @@ public class GameManager : MonoBehaviour
     public void AddPlayerScore(int amount)
     {
         player.AddScore(amount);
+    }
+    public void DamagePlayer(int amount)
+    {
+        player.DamagePlayer(amount);
+    }
+    public void HealPlayer(int amount)
+    {
+        player.HealPlayer(amount);
     }
     #endregion
 

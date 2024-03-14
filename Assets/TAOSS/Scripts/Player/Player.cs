@@ -136,12 +136,63 @@ public class Player : MonoBehaviour
             Debug.LogWarning("At Max int for score");
         }
     }
+    public void DamagePlayer(int amount)
+    {
+        Debug.Log("Player Health Prior Damage= " + playerStats.healthCurrent);
+        Debug.Log("Damaging player for " + amount);
+        if (playerStats.healthCurrent - amount > 0)
+        {
+            // not dead, damage
+            Debug.Log("Damaging player for " + amount);
+            playerStats.healthCurrent -= amount;
+            RefreshHealthVisuals();
+        }
+        else
+        {
+            // dedge
+            Debug.LogWarning("Oh dear, you have run out of health");
+        }
+
+        Debug.Log("Player Health after Damage= " + playerStats.healthCurrent);
+    }
+    public void HealPlayer(int amount)
+    {
+        Debug.Log("Healing player for " + amount);
+        if (playerStats.healthCurrent + amount < 100) // revert later, quick fix...
+        //if (playerStats.healthCurrent + amount < playerStats.healthMax)
+        {
+            // can heal
+            Debug.Log("Healing playing...");
+            playerStats.healthCurrent += amount;
+            RefreshHealthVisuals();
+        }
+        else
+        {
+            // will be at max
+            Debug.Log("Setting player to max health");
+            //playerStats.healthCurrent = playerStats.healthMax;
+            playerStats.healthCurrent = 100;
+            RefreshHealthVisuals();
+        }
+    }
 
     public void RefreshScoreVisuals()
     {
         if(playerStats != null)
         {
             UIManager.Instance.GetPlayerScoreVisualManager().RefreshScoreText(playerStats.score);
+        }
+        else
+        {
+            Debug.LogError("Player Stats is null");
+        }
+    }
+
+    public void RefreshHealthVisuals()
+    {
+        if (playerStats != null)
+        {
+            UIManager.Instance.GetPlayerHealthVisualManager().RefreshHealthText(playerStats.healthCurrent);
         }
         else
         {

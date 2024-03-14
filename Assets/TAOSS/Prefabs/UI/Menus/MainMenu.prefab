@@ -19019,7 +19019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -19039,6 +19039,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
@@ -19066,6 +19070,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CreateCharacterButtonPress
       objectReference: {fileID: 0}
@@ -19090,6 +19098,10 @@ PrefabInstance:
       value: SetGameState
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: HealPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CinematicsManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -19110,12 +19122,20 @@ PrefabInstance:
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_IntArgument
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -19143,6 +19163,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 615509783857496081, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 852593813743581282, guid: a0b1bb3087abbba4ab2b1294cd3159a1, type: 3}
