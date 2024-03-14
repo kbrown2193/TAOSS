@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8815094911624276492}
   - component: {fileID: 2812979114206325088}
+  - component: {fileID: 7897655269586132035}
   m_Layer: 0
   m_Name: Space_Stars_Rect_32_Grid
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181980925202068620}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,6 +46,23 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7897655269586132035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181980925202068620}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3741d5121a88046bc8b99959ae7a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 2812979114206325088}
+  startingSize: {x: 0.32, y: 0.32, z: 0}
+  targetSize: {x: 0.16, y: 0.16, z: 0}
+  changeDuration: 6
+  initialWait: 1
 --- !u!1001 &5697469797930495211
 PrefabInstance:
   m_ObjectHideFlags: 0
