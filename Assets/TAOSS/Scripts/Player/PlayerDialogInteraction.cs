@@ -11,7 +11,7 @@ public class PlayerDialogInteraction : MonoBehaviour
     {
         // TODO CHANGE TO USING INPUT SYSTEM
         //Debug.LogWarning("Warning using GetKeyDown... upgrade to input system actions");
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
             PlayerDialogInteract();
         }
