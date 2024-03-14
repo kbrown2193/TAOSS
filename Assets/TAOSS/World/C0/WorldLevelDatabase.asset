@@ -216,7 +216,7 @@ MonoBehaviour:
     cameraSize: {x: 9, y: 6}
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 1
-    worldLevelMovementSpeedMultiplier: 1
+    worldLevelMovementSpeedMultiplier: 1.5
     songKey: Gateway_Main
     additionalSongKeys: []
   - worldLevelKey: GoldenBox_Artifacts

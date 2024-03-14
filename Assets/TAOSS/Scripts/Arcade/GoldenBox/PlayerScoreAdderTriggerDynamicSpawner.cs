@@ -9,7 +9,7 @@ public class PlayerScoreAdderTriggerDynamicSpawner : MonoBehaviour
     [SerializeField] private RigidBody2DSpawnData[] rigidBody2DSpawnDatas;
 
     private float timer = 0f;
-    private float endTime = 60f;
+    private float endTime = 120f;
 
     private int currentSpawnIndex;
     private bool hasReachedEnd;
@@ -35,6 +35,11 @@ public class PlayerScoreAdderTriggerDynamicSpawner : MonoBehaviour
     {
         while(timer < endTime)
         {
+            if (currentSpawnIndex >= rigidBody2DSpawnDatas.Length)
+            {
+                Debug.Log("haveReachedEnd");
+                yield break;
+            }
 
             if (rigidBody2DSpawnDatas != null)
             {
@@ -43,6 +48,8 @@ public class PlayerScoreAdderTriggerDynamicSpawner : MonoBehaviour
                     Debug.Log("timer has reached end time... ");
                     yield break;
                 }
+
+
 
                 if (timer >= rigidBody2DSpawnDatas[currentSpawnIndex].spawnTime)
                 {
