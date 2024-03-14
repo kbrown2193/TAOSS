@@ -173,14 +173,14 @@ MonoBehaviour:
     - {fileID: 0}
     worldLevelTilemaps:
     - {fileID: 0}
-    playerSpawnPosition: {x: -16, y: -8, z: 0}
+    playerSpawnPosition: {x: 0, y: -7, z: 0}
     playerSpawnDirection: {x: 0, y: 0, z: 0}
     cameraSpawnPosition: {x: 0, y: 0, z: 0}
     cameraSpawnDirection: {x: 0, y: 0, z: 0}
     cameraSize: {x: 9, y: 6}
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
-    worldLevelSizeMultiplier: 1
-    worldLevelMovementSpeedMultiplier: 1
+    worldLevelSizeMultiplier: 0.5
+    worldLevelMovementSpeedMultiplier: 0.5
     songKey: Electric_Blue
     additionalSongKeys: []
   - worldLevelKey: GoldenBox_Moon
@@ -191,14 +191,14 @@ MonoBehaviour:
     - {fileID: 0}
     worldLevelTilemaps:
     - {fileID: 0}
-    playerSpawnPosition: {x: 0, y: 0, z: 0}
+    playerSpawnPosition: {x: -8, y: 1, z: 0}
     playerSpawnDirection: {x: 0, y: 0, z: 0}
     cameraSpawnPosition: {x: 0, y: 0, z: 0}
     cameraSpawnDirection: {x: 0, y: 0, z: 0}
     cameraSize: {x: 9, y: 6}
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
-    worldLevelSizeMultiplier: 1
-    worldLevelMovementSpeedMultiplier: 1
+    worldLevelSizeMultiplier: 0.5
+    worldLevelMovementSpeedMultiplier: 0.25
     songKey: Moon_A
     additionalSongKeys: []
   - worldLevelKey: GoldenBox_Gateway
