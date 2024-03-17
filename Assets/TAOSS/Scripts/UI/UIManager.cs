@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private MainMenu mainMenu;
     [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private SettingsMenu settingsMenu;
     [SerializeField] private PlayerScoreVisualManager playerScoreVisualManager;
     [SerializeField] private PlayerHealthVisualManager playerHealthVisualManager;
 
@@ -40,7 +41,7 @@ public class UIManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // ohter inits
+        // null component check inits
         if(mainMenu == null)
         {
             Debug.Log("Attempting find main menu on child");
@@ -48,16 +49,25 @@ public class UIManager : MonoBehaviour
         }
         if (mainMenu == null)
         {
-            Debug.LogError("Did Not Find main memnu");
+            Debug.LogError("Did NOT find main memnu");
         }
         if (pauseMenu == null)
         {
-            Debug.Log("Attempting find pasue menu on child");
+            Debug.Log("Attempting find pause menu on child");
             pauseMenu = (PauseMenu)gameObject.GetComponentInChildren(typeof(PauseMenu));
         }
         if (pauseMenu == null)
         {
-            Debug.LogError("Did Not Find pause memnu");
+            Debug.LogError("Did Not find pause memnu");
+        }
+        if (settingsMenu == null)
+        {
+            Debug.Log("Attempting find settings menu on child");
+            settingsMenu = (SettingsMenu)gameObject.GetComponentInChildren(typeof(SettingsMenu));
+        }
+        if (settingsMenu == null)
+        {
+            Debug.LogError("Did Not find settings memnu");
         }
     }
     #endregion
@@ -69,6 +79,10 @@ public class UIManager : MonoBehaviour
     public PauseMenu GetPauseMenu()
     {
         return pauseMenu;
+    }
+    public SettingsMenu GetSettingsMenu()
+    {
+        return settingsMenu;
     }
     public PlayerScoreVisualManager GetPlayerScoreVisualManager()
     {

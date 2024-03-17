@@ -27,6 +27,21 @@ public class SettingsMenu : MonoBehaviour
         SetSettingsMenuPage(SettingsMenuPage.Video);
     }
 
+    public void Show()
+    {
+        // for in game, show the settings menu
+        Debug.Log("Showing Settings Menu");
+        this.enabled = true;
+        this.gameObject.SetActive(true);
+    }
+    public void Hide()
+    {
+        // for in game, hide the settings menu
+        Debug.Log("Hiding Settings Menu");
+        this.enabled = false;
+        this.gameObject.SetActive(false);
+    }
+
     public void SetSettingsMenuPage(SettingsMenuPage page)
     {
         animator.SetBool("IsVideoMenu", page == SettingsMenuPage.Video);
@@ -49,6 +64,7 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    #region Settings Profile
     public void LoadSettingsFromProfile()
     {
         ApplicationData applicationData = ApplicationDataManager.Instance.LoadApplicationData(ApplicationDataManager.Instance.GetUserProfile());
@@ -70,6 +86,7 @@ public class SettingsMenu : MonoBehaviour
     {
         ApplicationDataManager.Instance.SaveSettingsProfiles(videoSettings, audioSettings, controlSettings, gameSettings);
     }
+    #endregion
 
     #region UI Volume Setting
     public void SetVolumeOverall(int value)

@@ -22,6 +22,11 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.UnPauseGame();
     }
 
+    public void SettingsButtonPress()
+    {
+        UIManager.Instance.GetSettingsMenu().Show();
+    }
+
     public void ExitToMainMenuButtonPress()
     {
         GameManager.Instance.ExitToMainMenu();
