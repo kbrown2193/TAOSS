@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 8051504189868608771}
   - component: {fileID: 4901922371488242928}
   - component: {fileID: 8844692755162430692}
+  - component: {fileID: 4005946141213718154}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,6 +158,8 @@ MonoBehaviour:
     credits: 0
     creditsStack: 0
     creditsStackOverflow: 0
+    arcadeRewardTickets: 0
+    arcadeRewardTicketsOverflow: 0
     movementSpeed: 0
     healthMax: 0
     healthCurrent: 0
@@ -446,6 +449,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 0}
+--- !u!114 &4005946141213718154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625794066423876340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c77f6f9f1ba9bf438521f9d07ccd3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  zoomStepAmount: 0.009375
+  zoomResetSize: 9.6
+  zoomSpeed: 0
+  clamp_limit_lower: 0.01
+  clamp_limit_upper: 1228.8
 --- !u!1 &2618573036561077672
 GameObject:
   m_ObjectHideFlags: 0

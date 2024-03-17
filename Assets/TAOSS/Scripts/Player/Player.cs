@@ -176,6 +176,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Stat Visuals
     public void RefreshScoreVisuals()
     {
         if(playerStats != null)
@@ -198,6 +199,96 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("Player Stats is null");
         }
+    }
+    #endregion
+
+    #region Currency
+    public void AddCredits(int amount)
+    {
+        if (playerStats.credits + amount < int.MaxValue)
+        {
+            Debug.Log("Adding Credots");
+            playerStats.credits += amount;
+        }
+        else
+        {
+            Debug.LogError("Credits Overflow");
+        }
+    }
+    public void SubtractCredits(int amount)
+    {
+        if (CanSubtractCredits(amount))
+        {
+            playerStats.credits -= amount;
+        }
+        else
+        {
+            Debug.Log("Cannot subract, would result in negative balance");
+        }
+    }
+    public bool CanSubtractCredits(int amount)
+    {
+        if ((playerStats.credits - amount) >= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public int GetCredits()
+    {
+        return playerStats.credits;
+    }
+    public int SetCredits(int amount)
+    {
+        return playerStats.credits = amount;
+    }
+
+    public void AddArcadeRewardTickets(int amount)
+    {
+        if(playerStats.arcadeRewardTickets + amount < int.MaxValue)
+        {
+            Debug.Log("Adding Arcade Reward Tickets");
+            playerStats.arcadeRewardTickets += amount;
+        }
+        else
+        {
+            Debug.LogError("Arcade Rewards Ticket Overflow");
+        }
+    }
+    public void SubtractArcadeRewardTickets(int amount)
+    {
+        if (CanSubtractArcadeRewardTickets(amount))
+        {
+            playerStats.arcadeRewardTickets -= amount;
+        }
+        else
+        {
+            Debug.Log("Cannot subract, would result in negative balance");
+        }
+    }
+    public bool CanSubtractArcadeRewardTickets(int amount)
+    {
+        if ((playerStats.arcadeRewardTickets - amount) >= 0)
+        {
+            return true;
+        }
+        else
+        { 
+            return false;
+        }
+    }
+
+    public int GetArcadeRewardTicketAmount()
+    {
+        return playerStats.arcadeRewardTickets;
+    }
+    public void SetArcadeRewardTicketAmount(int amount)
+    {
+        playerStats.arcadeRewardTickets = amount;
     }
     #endregion
 }

@@ -23,6 +23,8 @@ public class PlayerStats
     public int credits; // credit count (dual purpose as life? or make other stat)
     public int creditsStack; // a stack is = 64? 256? 1024? 4096? 2^?? int.max? credits
     public int creditsStackOverflow; // incase we max a stack, this is the overflow counter;
+    public int arcadeRewardTickets;
+    public int arcadeRewardTicketsOverflow;
 
     // Core Stats
     // Movement and Health
