@@ -9,6 +9,8 @@ public class PlayerPlatformerMovement : MonoBehaviour
     [SerializeField] float movementSpeed = 1f;
     [SerializeField] float worldLevelSpeedMultiplier = 1f;
 
+    [SerializeField] PlatformerMovementMode platformerMovementMode = PlatformerMovementMode.IsoPlatformer2DRB;
+
     private Vector3 movementPositionLimitsMax = new Vector3(300, 2);
     private Vector3 movementPositionLimitsMin = new Vector3(-300, -100);
     
@@ -19,12 +21,13 @@ public class PlayerPlatformerMovement : MonoBehaviour
     private Vector2 movementInputDirection;
     private Vector2 appliedForceDirection; // which direction the force will be applied (is clamped by movementPositionLimits)
 
-    // Rigid body based?
-    private Rigidbody2D rb;
+    // Rigid body based
+    private Rigidbody2D rb2D;
+    private Rigidbody rb; // 3d rigid body... unused atm
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         playerPositionTransform = GetComponent<Transform>(); // for now is transform on this player object...
     }
 
@@ -104,20 +107,19 @@ public class PlayerPlatformerMovement : MonoBehaviour
                 }
             }
 
-            rb.velocity = (appliedForceDirection * movementSpeed) * worldLevelSpeedMultiplier;
+            rb2D.velocity = (appliedForceDirection * movementSpeed) * worldLevelSpeedMultiplier;
         }
     }
 
     public void SetWorldLevelSpeedMultiplier(float value)
     {
         Debug.Log("Setting Player Platformer WorldLevelSpeed Multiplier to " + value);
-
         worldLevelSpeedMultiplier = value;
     }
 
     public void ResetVelocity()
     {
-        rb.velocity = Vector2.zero;
+        rb2D.velocity = Vector2.zero;
     }
 
     public void RepositionPlayer(Vector3 newPosition)
@@ -145,4 +147,17 @@ public class PlayerPlatformerMovement : MonoBehaviour
         movementPositionLimitsMin = lowerLimitXY;
         movementPositionLimitsMax = upperLimitXY;
     }
+}
+
+[System.Serializable]
+public enum PlatformerMovementMode
+{
+    IsoPlatformer2D, // Isometric 2D custom movement : move in X and Y direction (Z locked)
+    IsoPlatformer2DRB, // Isometric 2D rigid body based : move in X and Y direction (Z locked)
+    TopDownPlatformer2D, // Top down view 2D custom movement : move in X and Y direction (Z locked)
+    TopDownPlatformer2DRB, // Top down view 2D rigid body based : move in X and Y direction (Z locked)
+    GridPlatformer2D, // 2D grid movement : restricted to moving in cells, 2D
+    Platformer3D, // 3D platformer custom movement platformer
+    Platformer3DRB, // 3D  rigid body based platformer
+    GridPlatformer3D, // 3D grids movement : restricted to 3D grid movemnts, 3D
 }

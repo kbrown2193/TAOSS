@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8757006272951274312}
   - component: {fileID: 7682814895025558908}
+  - component: {fileID: 1202957512709444065}
   - component: {fileID: 6144559484791043872}
   - component: {fileID: 5477317270009611264}
   - component: {fileID: 168085565975530675}
@@ -142,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c544fd14f4e38e48afe50e52bc5e1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1202957512709444065}
   playerMovementMode: 0
-  playerPlatformerMovement: {fileID: 6144559484791043872}
   playerVisualManager: {fileID: 8051504189868608771}
   perspectiveScaler: {fileID: 8425746751872531593}
   playerStats:
@@ -181,6 +182,19 @@ MonoBehaviour:
   isMovementEnabled: 1
   worldLevelSpeedMultiplier: 1
   worldLevelSizeScaler: 1
+--- !u!114 &1202957512709444065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625794066423876340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30eba2fda51bd804da6c0821ada70729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPlatformerMovement: {fileID: 6144559484791043872}
 --- !u!114 &6144559484791043872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   worldLevelSpeedMultiplier: 1
+  platformerMovementMode: 1
 --- !u!114 &5477317270009611264
 MonoBehaviour:
   m_ObjectHideFlags: 0

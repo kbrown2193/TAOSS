@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Movement
+    // Control
+    [SerializeField] private PlayerController playerController;
+
+    // Control - Movement
     public PlayerMovementMode playerMovementMode;
-    [SerializeField] private PlayerPlatformerMovement playerPlatformerMovement;
 
     // Visual
     [SerializeField] private PlayerVisualManager playerVisualManager;
@@ -14,7 +16,7 @@ public class Player : MonoBehaviour
     // Visual - Graphics
     [SerializeField]private PerspectiveScaler perspectiveScaler;
 
-    // stats
+    // Stats
     [SerializeField] private PlayerStats playerStats;
 
     // Movement
@@ -23,35 +25,56 @@ public class Player : MonoBehaviour
     public float worldLevelSpeedMultiplier = 1f;
 
     // Sizing
-    public float worldLevelSizeScaler = 1; // be 1 for the most part..
-    // grid movement ... todo...
+    public float worldLevelSizeScaler = 1; // be 1 for the most part
+
+    #region Player Control
+    // Control Mode Accessors
+    public PlayerControlMode GetPlayerControllerControlMode()
+    {
+        return playerController.GetPlayerControlMode();
+    }
+    public void SetPlayerControllerControlMode(PlayerControlMode value)
+    {
+        playerController.SetPlayerControlMode(value);
+    }
+    public void SetPlayerControllerControlMode(int value)
+    {
+        playerController.SetPlayerControlMode(value);
+    }
+
+    // Refreshers
+    public void RefreshPlayerController()
+    {
+        switch (playerMovementMode)
+        {
+            case PlayerMovementMode.Platformer2D:
+                Debug.LogWarning("Platformer 2D Control...");
+                playerController.SetMovementIsEnabled(isMovementEnabled);
+                playerController.SetWorldLevelSpeedMultiplier(worldLevelSpeedMultiplier);
+                break;
+            case PlayerMovementMode.GridPlatformer2D:
+                Debug.LogWarning("GridPlatformer 2D Control Not Set Up");
+                break;
+            case PlayerMovementMode.Platformer3D:
+                Debug.LogWarning("Platformer 3D Control Not Set Up");
+                break;
+            case PlayerMovementMode.GridPlatformer3D:
+                Debug.LogWarning("GridPlatformer 3D Control Not Set Up");
+                break;
+        }
+    }
+    #endregion
 
     #region Player Movement
     public void SetPlayerMovementMode(PlayerMovementMode newPlayerMovementMode)
     {
         playerMovementMode = newPlayerMovementMode;
-        RefreshPlayerControllers();
-    }
+        RefreshPlayerController();
+    }   
 
-    public void RefreshPlayerControllers()
-    {
-        switch (playerMovementMode)
-        {
-            case PlayerMovementMode.Platformer2D:
-                // main use case for now...
-                playerPlatformerMovement.SetIsEnabled(isMovementEnabled);
-                playerPlatformerMovement.SetWorldLevelSpeedMultiplier(worldLevelSpeedMultiplier);
-                break;
-            case PlayerMovementMode.GridPlatformer2D:
-                break;
-            case PlayerMovementMode.Platformer3D:
-                break;
-            case PlayerMovementMode.GridPlatformer3D:
-                break;
-        }
-    }
     public void RepositionPlayer(Vector3 newPosition)
     {
+        Debug.Log("Repositioning Player by setting this transform position to " + newPosition);
         this.transform.position = newPosition; // for now set this transform
     }
 
@@ -63,16 +86,15 @@ public class Player : MonoBehaviour
     public void SetIsMovemenEnabled(bool value)
     {
         isMovementEnabled = value;
-        RefreshPlayerControllers();
+        RefreshPlayerController();
     }
 
     public void SetPlayerWorldLevelSpeedMultiplier(float value)
     {
         Debug.Log("Setting Player WorldLevelSpeedMultiplier to " + value);
         worldLevelSpeedMultiplier = value;
-        RefreshPlayerControllers();
+        RefreshPlayerController();
     }
-
     #endregion
 
     #region Player Scaling
@@ -101,7 +123,6 @@ public class Player : MonoBehaviour
             Debug.LogWarning("Player does not have a perspective player...");
         }
     }
-
     #endregion
 
     #region Player Visuals
@@ -121,8 +142,9 @@ public class Player : MonoBehaviour
     #region Player Stats
     public void SavePlayerStats()
     {
-        
+        Debug.LogWarning("TODO: Player.SavePlayerStats()");
     }
+
     public void AddScore(int amount)
     {
         Debug.Log("Adding score to player stats");
@@ -136,6 +158,7 @@ public class Player : MonoBehaviour
             Debug.LogWarning("At Max int for score");
         }
     }
+
     public void DamagePlayer(int amount)
     {
         Debug.Log("Player Health Prior Damage= " + playerStats.healthCurrent);
@@ -155,6 +178,7 @@ public class Player : MonoBehaviour
 
         Debug.Log("Player Health after Damage= " + playerStats.healthCurrent);
     }
+
     public void HealPlayer(int amount)
     {
         Debug.Log("Healing player for " + amount);
@@ -237,7 +261,6 @@ public class Player : MonoBehaviour
             return false;
         }
     }
-
     public int GetCredits()
     {
         return playerStats.credits;
@@ -246,7 +269,6 @@ public class Player : MonoBehaviour
     {
         return playerStats.credits = amount;
     }
-
     public void AddArcadeRewardTickets(int amount)
     {
         if(playerStats.arcadeRewardTickets + amount < int.MaxValue)
@@ -281,7 +303,6 @@ public class Player : MonoBehaviour
             return false;
         }
     }
-
     public int GetArcadeRewardTicketAmount()
     {
         return playerStats.arcadeRewardTickets;
@@ -293,6 +314,7 @@ public class Player : MonoBehaviour
     #endregion
 }
 
+// SAME AS PlatformerMovement mode, but without requiring needing more info like rigid body or orientation?
 [System.Serializable]
 public enum PlayerMovementMode
 {
@@ -300,4 +322,14 @@ public enum PlayerMovementMode
     GridPlatformer2D, // restricted to moving in cells, for turn based?
     Platformer3D,
     GridPlatformer3D,
+}
+
+// TODO: Utilize... implement and animator state machine / blend tree
+[System.Serializable]
+public enum PlayerDisplayState
+{
+    Idle, // the animator state machine states? or blend tree states
+    Walking,
+    Running,
+    Jumping,
 }

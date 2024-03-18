@@ -100,6 +100,8 @@ public class TAOSSPreloader : MonoBehaviour
     public IEnumerator TransitionToMainMenu()
     {
         GameManager.Instance.SetGameState(GameState.MainMenu);
+        GameManager.Instance.RefreshPlayerControllerFromGameState();
+        //GameManager.Instance.player.SetPlayerControllerControlMode(PlayerControlMode.MainMenu); // achieves same thing? as above
 
         yield return new WaitForSeconds(2); // initial wait for now... before destroying this
 

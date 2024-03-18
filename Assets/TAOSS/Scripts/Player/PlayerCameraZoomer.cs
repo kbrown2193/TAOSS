@@ -15,6 +15,7 @@ public class PlayerCameraZoomer : MonoBehaviour
     public float clamp_limit_lower = 0.01f;
     public float clamp_limit_upper = 1228.8f;
 
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +37,7 @@ public class PlayerCameraZoomer : MonoBehaviour
             ZoomReset();
         }
     }
+    */
 
     public void ZoomIn()
     {

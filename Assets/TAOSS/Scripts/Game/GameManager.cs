@@ -216,6 +216,7 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("Starting Game...");
             SetGameState(GameState.InGame);
+            RefreshPlayerControllerFromGameState();
         }
         else
         {
@@ -368,7 +369,7 @@ public class GameManager : MonoBehaviour
     {
         if (levelIndex == 5)
         {
-            Debug.Log("Completed Artifacts");
+            Debug.LogWarning("Completed Artifacts:TODO: Restructure outsidePortal");
             outsidePortal.SetIsTriggerEnabledTrue();
         }
         else
@@ -396,8 +397,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("TODO: other exit to main menu functionalityMain Menu");
 
         // Other player interaction control... TODO:
-
         SetGameState(GameState.MainMenu);
+        RefreshPlayerControllerFromGameState();
     }
 
     public void ExitGame()
@@ -416,12 +417,14 @@ public class GameManager : MonoBehaviour
     {
         isPaused = true;
         gameState = GameState.Paused;
+        RefreshPlayerControllerFromGameState();
         UIManager.Instance.GetPauseMenu().Show();
     }
     public void UnPauseGame()
     {
         isPaused = false;
         gameState = GameState.InGame;
+        RefreshPlayerControllerFromGameState();
         UIManager.Instance.GetPauseMenu().Hide();
     }
 
@@ -435,7 +438,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetGameState(int newGmeState)
     {
-        if(newGmeState >= 0 && newGmeState <= (int)GameState.Paused)
+        if(newGmeState >= 0 && newGmeState <= (int)GameState.Loading)
         {
             Debug.Log("ValidGameState... Setting");
             gameState = (GameState)newGmeState;
@@ -443,6 +446,41 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Invalid GameState given");
+        }
+    }
+
+    public void SetGameStateAndRefresh(GameState newGmeState)
+    {
+        SetGameState(newGmeState);
+        RefreshPlayerControllerFromGameState();
+    }
+    public void SetGameStateAndRefresh(int newGmeState)
+    {
+        SetGameState(newGmeState);
+        RefreshPlayerControllerFromGameState();
+    }
+
+    public void RefreshPlayerControllerFromGameState()
+    {
+        switch (gameState)
+        {
+            case GameState.Preload:
+                player.SetPlayerControllerControlMode(PlayerControlMode.Disabled);
+                break;
+            case GameState.MainMenu:
+                player.SetPlayerControllerControlMode(PlayerControlMode.MainMenu);
+                break;
+            case GameState.InGame:
+                player.SetPlayerControllerControlMode(PlayerControlMode.InGame);
+                break;
+            case GameState.Paused:
+                player.SetPlayerControllerControlMode(PlayerControlMode.PauseMenu);
+                break;
+            case GameState.Loading:
+                player.SetPlayerControllerControlMode(PlayerControlMode.Disabled);
+                break;
+            default:
+                break;
         }
     }
     #endregion
@@ -455,4 +493,5 @@ public enum GameState
     MainMenu,
     InGame,
     Paused, // In Game, but paused
+    Loading, // Anytime we are waiting... loading...
 }
