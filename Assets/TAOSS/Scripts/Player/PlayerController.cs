@@ -11,12 +11,31 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerInput playerInput; // if we need a reference to the player input... to change context
     [SerializeField] private PlayerPlatformerMovement playerPlatformerMovement;
+
+    [SerializeField] private Camera camera; // on movement fore now... ? will probably want here
+
 
     private PlayerControlMode playerControlMode = PlayerControlMode.Disabled; // This mode controls what will be triggered when input is detected
     private PlatformerMovementMode platformerMovementMode = PlatformerMovementMode.IsoPlatformer2DRB;
 
+    private Vector2 mouseInputPosition;
+    private Vector2 mousePosition;
+
     private bool isMovementEnabled; // is a variable on player atm also...
+
+    private void Awake()
+    {
+        if (camera == null)
+        {
+            camera = Camera.main; // Attempt to find main camera
+        }
+        if(playerInput == null)
+        {
+            playerInput = GetComponent<PlayerInput>(); // Attempt to find Player input component
+        }
+    }
 
     #region Control Mode
     public PlayerControlMode GetPlayerControlMode()
@@ -45,6 +64,15 @@ public class PlayerController : MonoBehaviour
     public void SetWorldLevelSpeedMultiplier(float amount)
     {
         playerPlatformerMovement.SetWorldLevelSpeedMultiplier(amount);
+    }
+    #endregion
+
+    #region Mouse / Look Position
+
+    private void OnMousePosition(InputValue value)
+    {
+        mouseInputPosition = value.Get<Vector2>();
+        //camera.ScreenToWorldPoint(mouseInputPosition); // then in fixed update, caluclate this for ???
     }
     #endregion
 

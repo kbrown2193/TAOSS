@@ -5,21 +5,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerPlatformerMovement : MonoBehaviour
 {
-    //private Vector2 movement;
-    [SerializeField] float movementSpeed = 1f;
-    [SerializeField] float worldLevelSpeedMultiplier = 1f;
+    [SerializeField] private Camera camera;
+
+    // does this need to be serialized???
+    [SerializeField] private float movementSpeed = 1f;
+    [SerializeField] private float worldLevelSpeedMultiplier = 1f;
 
     [SerializeField] PlatformerMovementMode platformerMovementMode = PlatformerMovementMode.IsoPlatformer2DRB;
 
     private Vector3 movementPositionLimitsMax = new Vector3(300, 2);
     private Vector3 movementPositionLimitsMin = new Vector3(-300, -100);
-    
-    private Transform playerPositionTransform;
+
+    [SerializeField] private Transform playerPositionTransform;
+    [SerializeField] private Transform playerAimRotationTransform; // this will be rotated to the facing direction
 
     private bool isEnabled;
 
     private Vector2 movementInputDirection;
     private Vector2 appliedForceDirection; // which direction the force will be applied (is clamped by movementPositionLimits)
+    private Vector2 mouseInputPosition;
+    private Vector2 mousePosition;
+
+    public DirectionFacing directionFacing; // public for now... test...
+    private Vector2 facingDirection;
+    private float facingAngle;
+    private Vector3 facingVector = Vector3.zero;
 
     // Rigid body based
     private Rigidbody2D rb2D;
@@ -28,12 +38,28 @@ public class PlayerPlatformerMovement : MonoBehaviour
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        playerPositionTransform = GetComponent<Transform>(); // for now is transform on this player object...
+        if(playerPositionTransform == null)
+        {
+            playerPositionTransform = GetComponent<Transform>(); // for now is transform on this player object...
+        }
+
+        if(rb2D == null)
+        {
+            Debug.LogError("RB2D is null");
+        }
+        if (playerAimRotationTransform == null)
+        {
+            Debug.LogError("playerAimRotationTransform is null"); // attach this in field for now...
+        }
     }
 
     private void OnMovement(InputValue value)
     {
         movementInputDirection = value.Get<Vector2>();
+    }
+    private void OnMousePosition(InputValue value)
+    {
+        mouseInputPosition = value.Get<Vector2>();
     }
 
     /// <summary>
@@ -44,6 +70,7 @@ public class PlayerPlatformerMovement : MonoBehaviour
     {
         if(isEnabled)
         {
+            // calculate the force
             appliedForceDirection = movementInputDirection;
 
             if (movementInputDirection.y > 0)
@@ -107,7 +134,26 @@ public class PlayerPlatformerMovement : MonoBehaviour
                 }
             }
 
+            // Apply the force
             rb2D.velocity = (appliedForceDirection * movementSpeed) * worldLevelSpeedMultiplier;
+
+            // Calculate the facing direction
+            mousePosition = camera.ScreenToWorldPoint(mouseInputPosition); // this gets a world posiition corresponding to the mouse positon
+            //Debug.LogWarning("Only calculates RB2D for now..");
+            facingDirection = mousePosition - rb2D.position;
+            facingAngle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg;
+            //facingAngle = (Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg) - 90; // add / subtract corection angle if facing up or down  instead of right as 0 angle
+            //facingAngle = (Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg) + 90;
+            //Debug.Log("Player Mouse Input Position" + mouseInputPosition.ToString() + ", Mouse Position = " + mousePosition.ToString());
+            //Debug.Log("Player facingDirection " + facingDirection.ToString() + ", facingAngle = " + facingAngle.ToString());
+
+            // Apply facing direction? if applicable
+            rb2D.MoveRotation(facingAngle); //??
+            facingVector.z = facingAngle;
+            //playerPositionTransform.rotation = Quaternion.Euler(facingVector); // IF YOU WANT FULL SPINNING OF PLAYER this is fine... 
+            // we only want to rotate the aimer portion of player
+            playerAimRotationTransform.rotation = Quaternion.Euler(facingVector);
+            directionFacing = CalculateDirectionFacingFromAngle(facingAngle);
         }
     }
 
@@ -147,6 +193,104 @@ public class PlayerPlatformerMovement : MonoBehaviour
         movementPositionLimitsMin = lowerLimitXY;
         movementPositionLimitsMax = upperLimitXY;
     }
+
+    #region Angle and Direction
+    /// <summary>
+    /// Calculate the direction facing givin an angle from -180 to 180
+    /// 
+    /// EAST 0 DEGREE SYSTEM (for 2D...)
+    /// Assumes 0 is East
+    /// 90 is north
+    /// -90 is south
+    /// 180 is west
+    /// -180 is west
+    /// 
+    /// gonna do a simple if, reductive return path....
+    /// could be more elegeant, but this will be simplistic
+    /// 
+    /// Moving East best performance?, then NE / SE, then N/S, then NW / SW, then last W
+    /// </summary>
+    /// <param name="angle"></param>
+    /// <returns>DirectionFacing</returns>
+    public DirectionFacing CalculateDirectionFacingFromAngle(float angle)
+    {
+        if (angle >= 0)
+        {
+            // North
+            if (angle < 30)
+            {
+                return DirectionFacing.East;
+            }
+            else
+            {
+                // Could be facing north, west, north east, northwest
+                if(angle < 60)
+                {
+                    // this must be north east...
+                    return DirectionFacing.NorthEast;
+                }
+                else
+                {
+                    // could be north.. northwest... west..
+                    if(angle < 120)
+                    {
+                        return DirectionFacing.North;
+                    }
+                    else
+                    {
+                        if (angle < 150)
+                        {
+                            return DirectionFacing.NorthWest;
+                        }
+                        else
+                        {
+                            // Must be west...
+                            return DirectionFacing.West;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            // South
+            if(angle >-30)
+            {
+                // Facing mainly East, with some small south variation (30 degrees)
+                return DirectionFacing.East;
+            }
+            else
+            {
+                // Could be facing South, West, SouthEast, SouthWest
+                if (angle > -60)
+                {
+                    // this must be south east...
+                    return DirectionFacing.SouthEast;
+                }
+                else
+                {
+                    // could be south.. southwest... west..
+                    if (angle > -120)
+                    {
+                        return DirectionFacing.South;
+                    }
+                    else
+                    {
+                        if (angle > -150)
+                        {
+                            return DirectionFacing.SouthWest;
+                        }
+                        else
+                        {
+                            // Must be west...
+                            return DirectionFacing.West;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #endregion
 }
 
 [System.Serializable]
@@ -160,4 +304,20 @@ public enum PlatformerMovementMode
     Platformer3D, // 3D platformer custom movement platformer
     Platformer3DRB, // 3D  rigid body based platformer
     GridPlatformer3D, // 3D grids movement : restricted to 3D grid movemnts, 3D
+}
+
+/// <summary>
+/// Eight direction facing enumeration for character rotation states
+/// </summary>
+[System.Serializable]
+public enum DirectionFacing
+{
+    East, // east if facing absolute angle is less than 90
+    North, // north if facing angle is positive
+    West, // if facing absolute angle is greater than 90 (to 180)
+    South, //  south if facing angle is negative
+    NorthEast,
+    NorthWest,
+    SouthEast,
+    SouthWest,
 }

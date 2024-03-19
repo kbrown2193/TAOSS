@@ -69476,10 +69476,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Preloader
       objectReference: {fileID: 0}
-    - target: {fileID: 547808646338830009, guid: b3ace4520600c6e4c8ac9d50f3acfd75, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6321254265492789430, guid: b3ace4520600c6e4c8ac9d50f3acfd75, type: 3}
       propertyPath: mainMenu
       value: 
@@ -133886,6 +133882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 700484859}
     m_Modifications:
+    - target: {fileID: 1202957512709444065, guid: 10a3c31f3f4e56f4eb82948df74c53a1, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1256607758}
     - target: {fileID: 1625794066423876340, guid: 10a3c31f3f4e56f4eb82948df74c53a1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -133898,6 +133898,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1695705668}
+    - target: {fileID: 6144559484791043872, guid: 10a3c31f3f4e56f4eb82948df74c53a1, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1256607758}
     - target: {fileID: 8757006272951274312, guid: 10a3c31f3f4e56f4eb82948df74c53a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
