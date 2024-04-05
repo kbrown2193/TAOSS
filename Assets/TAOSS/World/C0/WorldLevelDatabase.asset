@@ -90,7 +90,7 @@ MonoBehaviour:
     cameraSize: {x: 153, y: 6}
     playerCellSpawnPosition: {x: 0, y: 0, z: 0}
     worldLevelSizeMultiplier: 20
-    worldLevelMovementSpeedMultiplier: 10
+    worldLevelMovementSpeedMultiplier: 20
     songKey: Town_Theme_Galaxy
     additionalSongKeys: []
   - worldLevelKey: Arcade_SilverRoom_GoldenBox
